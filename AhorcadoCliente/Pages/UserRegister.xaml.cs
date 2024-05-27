@@ -1,0 +1,41 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
+using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
+using System.Windows.Shapes;
+
+namespace AhorcadoCliente.Pages
+{
+    /// <summary>
+    /// Lógica de interacción para UserRegister.xaml
+    /// </summary>
+    public partial class UserRegister : Page
+    {
+        public UserRegister()
+        {
+            InitializeComponent();
+        }
+
+        private void cancelRegister_Click(object sender, RoutedEventArgs e)
+        {
+            cancelRegister();
+        }
+
+        private void cancelRegister()
+        {
+            if (NavigationService.CanGoBack)
+            {
+                NavigationService.GoBack();
+            }
+        }
+    }
+}
