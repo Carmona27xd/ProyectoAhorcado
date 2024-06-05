@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="5668c51e-7566-4da6-8c5c-4499942c3201" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:50294/WordService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="WordService.xsd" MetadataType="Schema" ID="37b8f056-a0fc-4cd8-a52f-d4df70e926f6" SourceId="1" SourceUrl="http://localhost:50294/WordService.svc?xsd=xsd2" />
+    <MetadataFile FileName="WordService1.xsd" MetadataType="Schema" ID="b01e1971-3ebb-4dc3-9cd4-ce4ee53d6a96" SourceId="1" SourceUrl="http://localhost:50294/WordService.svc?xsd=xsd1" />
+    <MetadataFile FileName="WordService.wsdl" MetadataType="Wsdl" ID="70f16985-aefa-4536-90d9-8ac1585bc2a6" SourceId="1" SourceUrl="http://localhost:50294/WordService.svc?wsdl" />
+    <MetadataFile FileName="WordService2.xsd" MetadataType="Schema" ID="926d55f5-5a5b-4413-a724-47ca8f964923" SourceId="1" SourceUrl="http://localhost:50294/WordService.svc?xsd=xsd0" />
+    <MetadataFile FileName="WordService.disco" MetadataType="Disco" ID="eab4b0f5-d885-4054-a990-52165c3dde27" SourceId="1" SourceUrl="http://localhost:50294/WordService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

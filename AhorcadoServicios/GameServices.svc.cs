@@ -13,14 +13,14 @@ namespace AhorcadoServicios
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione GameServices.svc o GameServices.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class GameServices : IGameServices
     {
-        public bool createMatch(Match newMatch)
+        public bool createMatch(MatchGame newMatch)
         {
-            return MatchDTO.createMatch(newMatch);
+            return MatchGameDTO.createMatch(newMatch);
         }
 
-        public List<Match> getMatchList()
+        public List<MatchGame> getMatchList()
         {
-            return MatchDTO.getMatchesAvaliables();
+            return MatchGameDTO.getMatchesAvaliables();
         }
     }
 }

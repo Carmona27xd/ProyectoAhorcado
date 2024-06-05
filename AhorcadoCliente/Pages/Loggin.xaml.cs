@@ -1,4 +1,4 @@
-﻿using AhorcadoCliente.ServiceReference1;
+﻿using AhorcadoCliente.UserServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,11 +31,15 @@ namespace AhorcadoCliente.Pages
             ponerCredenciales();
         }
 
+        //BORRAR AL ENTREGAR
+
         private void ponerCredenciales()
         {
-            txtEmail.Text = "user1@example.com";
-            txtPassword.Password = "password123";
+            txtEmail.Text = "ejemplo1@example.com";
+            txtPassword.Password = "contrasena1";
         }
+
+        //BORRAR AL ENTREGAR
 
         private void createAccount_Click(object sender, RoutedEventArgs e)
         {
@@ -71,11 +75,11 @@ namespace AhorcadoCliente.Pages
                 }
                 else
                 {
-                    User user = userServices.logIn(email, password);
+                    Player user = userServices.logIn(email, password);
                     if (user != null)
                     {
                         string message = Properties.Resources.LogginMessage;
-                        string messageComplete = message + " " + user.nickname;
+                        string messageComplete = message + " " + user.NickName;
                         MessageBox.Show(messageComplete);
                         SessionManager.Instance.Login(user);
 

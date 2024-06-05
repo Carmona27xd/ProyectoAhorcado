@@ -19,7 +19,7 @@ namespace AhorcadoServicios.Model.DTO
                 connection.Open();
                 DataContext dataContext = new DataContext(connection);
                 var words = (from wor in dataContext.GetTable<Word>()
-                             where wor.id_categoria == category
+                             where wor.CategoryID == category
                              select wor).ToList();
                 return words;
 
@@ -28,6 +28,46 @@ namespace AhorcadoServicios.Model.DTO
             {
                 throw ex; 
             }
+        }
+
+        public static string getWordSpanish(int wordID)
+        {
+            try
+            {
+                var connection = ConnectionDB.getConnection();
+                connection.Open();
+                DataContext dataContext = new DataContext(connection);
+                var word = (from wor in dataContext.GetTable<Word>()
+                            where wor.WordID == wordID
+                            select wor.SpanishWord).FirstOrDefault();
+                return word;
+
+            }
+            catch (SqlException ex) 
+            { 
+                throw ex; 
+            }
+
+        }
+
+        public static string getWordEnglish(int wordID)
+        {
+            try
+            {
+                var connection = ConnectionDB.getConnection();
+                connection.Open();
+                DataContext dataContext = new DataContext(connection);
+                var word = (from wor in dataContext.GetTable<Word>()
+                            where wor.WordID == wordID
+                            select wor.EnglishWord).FirstOrDefault();
+                return word;
+
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+
         }
     }
 }

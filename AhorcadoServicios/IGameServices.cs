@@ -13,9 +13,9 @@ namespace AhorcadoServicios
     public interface IGameServices
     {
         [OperationContract]
-        bool createMatch(Match createMatch);
+        bool createMatch(MatchGame createMatch);
         [OperationContract]
-        List<Match> getMatchList();
+        List<MatchGame> getMatchList();
 
     }
 }

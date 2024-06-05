@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AhorcadoCliente.GameServices;
+using AhorcadoCliente.WordServices;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -20,145 +22,81 @@ namespace AhorcadoCliente.Pages
     /// </summary>
     public partial class InGame : Page
     {
-        public InGame()
+        private List<TextBlock> textBlocks = new List<TextBlock>();
+        GameServices.GameServicesClient gameServicesClient = new GameServicesClient();
+        WordServiceClient wordServiceClient = new WordServiceClient();
+        string word;
+
+        public InGame(MatchGame matchGame)
         {
             InitializeComponent();
-            
-        }
-
-        private void ButtonQ_Click(object sender, RoutedEventArgs e)
-        {
+            LoadMatchWord(matchGame);
 
         }
 
-        private void ButtonW_Click(object sender, RoutedEventArgs e)
+        private void generateWordLines(string word)
         {
+            WordPanel.Children.Clear();
+            textBlocks.Clear();
 
+            foreach (char letter in word)
+            {
+                TextBlock texBlock = new TextBlock
+                {
+                    Text = "_",
+                    FontSize = 60,
+                    FontWeight = FontWeights.Bold,
+                    Margin = new Thickness(5)
+                };
+
+                textBlocks.Add(texBlock);
+                WordPanel.Children.Add(texBlock);
+            }
         }
 
-        private void ButtonE_Click(object sender, RoutedEventArgs e)
+        private async void LoadMatchWord(MatchGame matchGame)
         {
-
+            try
+            {
+                word = await getMatchWordAsync(matchGame);
+                generateWordLines(word);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show($"Error loading match word: {e.Message}");
+            }
         }
 
-        private void ButtonR_Click(object sender, RoutedEventArgs e)
+        private async Task<string> getMatchWordAsync(MatchGame match)
         {
-
+            string wordMatch = null;
+            try
+            {
+                if (match != null && match.MatchLanguage == 1)
+                {
+                    wordMatch = await wordServiceClient.getWordSpanishAsync(match.WordID);
+                }
+                else if (match != null && match.MatchLanguage == 2)
+                {
+                    wordMatch = await wordServiceClient.getWordEnglishAsync(match.WordID);
+                }
+            }
+            catch (Exception e)
+            {
+                throw e;
+            }
+            return wordMatch;
         }
 
-        private void ButtonT_Click(object sender, RoutedEventArgs e)
+        private void LetterButton_Click(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void ButtonY_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonU_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonI_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonO_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonP_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonA_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonS_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonD_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonF_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonG_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonH_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonJ_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonK_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonL_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonÑ_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonZ_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonX_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonC_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonV_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonB_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonN_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
-        private void ButtonM_Click(object sender, RoutedEventArgs e)
-        {
-
+            Button button = sender as Button;
+            if (button != null)
+            {
+                string letter = button.Content.ToString();
+                MessageBox.Show($"Button {letter} clicked");
+            }
         }
     }
 }
+

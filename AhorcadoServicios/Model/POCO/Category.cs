@@ -6,14 +6,14 @@ using System.Web;
 
 namespace AhorcadoServicios.Model.POCO
 {
-    [Table(Name = "categoria")]
+    [Table(Name = "Category")]
     public class Category
     {
         [Column(IsPrimaryKey = true, IsDbGenerated = true)]
-        public int id_categoria { get; set; }
+        public int CategoryID { get; set; }
         [Column]
-        public string categoria_espanol { get; set; }
+        public string SpanishCategory { get; set; }
         [Column]
-        public string categoria_ingles { get; set; }
+        public string EnglishCategory { get; set; }
     }
 }

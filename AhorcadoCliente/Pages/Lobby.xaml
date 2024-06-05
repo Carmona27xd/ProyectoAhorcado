@@ -18,11 +18,11 @@
         <Label Content="{x:Static p:Resources.LobbyLabel}" Grid.Row="0" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20"/>
         <Button Content="{x:Static p:Resources.CreateMatch}" Grid.Row="2" HorizontalAlignment="Right" Margin="0,10,10,10" VerticalAlignment="Bottom" Width="130" Height="30" Click="CreateMatch_Click"/>
         <DataGrid x:Name="MatchesDataGrid" AutoGenerateColumns="False" Margin="0,10,0,0" Grid.Row="1" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserAddRows="False" CanUserResizeRows="False" CanUserSortColumns="False"
-          HorizontalAlignment="Center" VerticalAlignment="Top">
+         IsReadOnly="True" HorizontalAlignment="Center" VerticalAlignment="Top">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="{x:Static p:Resources.DataGridColumnNickName}" Binding="{Binding nickname_creador}" Width="160" />
-                <DataGridTextColumn Header="{x:Static p:Resources.DataGridColumnEmail}" Binding="{Binding correo_creador}" Width="160"/>
-                <DataGridTextColumn Header="{x:Static p:Resources.DataGridColumnDate}" Binding="{Binding fecha_partida}" Width="160"/>
+                <DataGridTextColumn Header="{x:Static p:Resources.DataGridColumnNickName}" Binding="{Binding NickNameChallenger}" Width="160" />
+                <DataGridTextColumn Header="{x:Static p:Resources.DataGridColumnEmail}" Binding="{Binding EmailChallenger}" Width="160"/>
+                <DataGridTextColumn Header="{x:Static p:Resources.DataGridColumnDate}" Binding="{Binding DateMatch}" Width="160"/>
                 <!-- Columna con el botón "Unirse" -->
                 <DataGridTemplateColumn Header="{x:Static p:Resources.DataGridColumnJoin}" Width="160">
                     <DataGridTemplateColumn.CellTemplate>

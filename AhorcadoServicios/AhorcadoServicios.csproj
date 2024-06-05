@@ -77,12 +77,12 @@
     <Compile Include="IWordService.cs" />
     <Compile Include="Model\ConnectionDB.cs" />
     <Compile Include="Model\DTO\CategoryDTO.cs" />
-    <Compile Include="Model\DTO\MatchDTO.cs" />
+    <Compile Include="Model\DTO\MatchGameDTO.cs" />
     <Compile Include="Model\DTO\UserDTO.cs" />
     <Compile Include="Model\DTO\WordDTO.cs" />
     <Compile Include="Model\POCO\Category.cs" />
-    <Compile Include="Model\POCO\Match.cs" />
-    <Compile Include="Model\POCO\User.cs" />
+    <Compile Include="Model\POCO\MatchGame.cs" />
+    <Compile Include="Model\POCO\Player.cs" />
     <Compile Include="Model\POCO\Word.cs" />
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>

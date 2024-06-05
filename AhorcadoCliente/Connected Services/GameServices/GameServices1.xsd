@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/AhorcadoServicios.Model.POCO" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/AhorcadoServicios.Model.POCO" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:50294/GameServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+  <xs:complexType name="MatchGame">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ChallengerID" type="xs:int" />
+      <xs:element minOccurs="0" name="DateMatch" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="EmailChallenger" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="GuestID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="MatchID" type="xs:int" />
+      <xs:element minOccurs="0" name="MatchLanguage" type="xs:int" />
+      <xs:element minOccurs="0" name="NickNameChallenger" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="RemainingAttempts" type="xs:int" />
+      <xs:element minOccurs="0" name="SelectLetter" nillable="true" type="ser:char" />
+      <xs:element minOccurs="0" name="StatusMatchID" type="xs:int" />
+      <xs:element minOccurs="0" name="WinnerID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WordID" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="MatchGame" nillable="true" type="tns:MatchGame" />
+  <xs:complexType name="ArrayOfMatchGame">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="MatchGame" nillable="true" type="tns:MatchGame" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfMatchGame" nillable="true" type="tns:ArrayOfMatchGame" />
+</xs:schema>

@@ -1,6 +1,6 @@
-﻿using AhorcadoCliente.ServiceReference1;
-using AhorcadoCliente.ServiceReference2;
-using AhorcadoCliente.ServiceReference3;
+﻿using AhorcadoCliente.GameServices;
+using AhorcadoCliente.UserServices;
+using AhorcadoCliente.WordServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +27,7 @@ namespace AhorcadoCliente.Pages
         List<Word> words;
         WordServiceClient wordServiceClient = new WordServiceClient();
         GameServicesClient gameServicesClient = new GameServicesClient();
+        private int matchLanguage;
 
         public CreateMatch()
         {
@@ -40,7 +41,7 @@ namespace AhorcadoCliente.Pages
         {
             try
             {
-                Match newMatch = createNewMatch();
+                MatchGame newMatch = createNewMatch();
                 bool confirmation = await gameServicesClient.createMatchAsync(newMatch);
                 if (confirmation)
                 {
@@ -91,19 +92,21 @@ namespace AhorcadoCliente.Pages
 
         private void SpanishSelection_Click(object sender, RoutedEventArgs e)
         {
-            cbWordCategories.DisplayMemberPath = "categoria_espanol";
-            cbSelectWord.DisplayMemberPath = "palabra_espanol";
+            cbWordCategories.DisplayMemberPath = "SpanishCategory";
+            cbSelectWord.DisplayMemberPath = "SpanishWord";
             cbWordCategories.IsEnabled = true;
             cbSelectWord.IsEnabled = true;
+            matchLanguage = 1;
 
         }
 
         private void EnglishSelection_Click(object sender, RoutedEventArgs e)
         {
-            cbWordCategories.DisplayMemberPath = "categoria_ingles";
-            cbSelectWord.DisplayMemberPath = "palabra_ingles";
+            cbWordCategories.DisplayMemberPath = "EnglishCategory";
+            cbSelectWord.DisplayMemberPath = "EnglishWord";
             cbWordCategories.IsEnabled = true;
             cbSelectWord.IsEnabled = true;
+            matchLanguage = 2;
         }
 
         private async void cbWordCategories_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -111,7 +114,7 @@ namespace AhorcadoCliente.Pages
             if (cbWordCategories.SelectedItem != null)
             {
                 Category selectedCategory = (Category)cbWordCategories.SelectedItem;
-                int categoryId = selectedCategory.id_categoria;
+                int categoryId = selectedCategory.CategoryID;
 
                 await chargeWordsPerCategory(categoryId);
             }
@@ -124,24 +127,25 @@ namespace AhorcadoCliente.Pages
                 NavigationService.GoBack();
             }
         }
-        private Match createNewMatch()
+        private MatchGame createNewMatch()
         {
             try
             {
-                User user = SessionManager.Instance.LoggedInUser;
+                Player player = SessionManager.Instance.LoggedInPlayer;
                 Word selectedWord = (Word)cbSelectWord.SelectedItem;
 
-                Match newMatch = new Match();
-                newMatch.id_palabra = selectedWord.id_palabra;
-                newMatch.id_creador = user.id_cuenta;
-                newMatch.estado_partida = 1;
-                newMatch.id_retador = null;
-                newMatch.id_ganador = null;
-                newMatch.fecha_partida = DateTime.Now.ToString(("dd/MM/yyyy"));
-                newMatch.letra_seleccionada = null;
-                newMatch.intentos_restantes = 6;
-                newMatch.nickname_creador = user.nickname;
-                newMatch.correo_creador = user.correo;
+                MatchGame newMatch = new MatchGame();
+                newMatch.WordID = selectedWord.WordID;
+                newMatch.ChallengerID = player.PlayerID;
+                newMatch.StatusMatchID = 1;
+                newMatch.GuestID = null;
+                newMatch.WinnerID = null;
+                newMatch.DateMatch = DateTime.Now.ToString(("dd/MM/yyyy"));
+                newMatch.SelectLetter = null;
+                newMatch.RemainingAttempts = 6;
+                newMatch.NickNameChallenger = player.NickName;
+                newMatch.EmailChallenger = player.Email;
+                newMatch.MatchLanguage = matchLanguage;
 
                 return newMatch;
             }

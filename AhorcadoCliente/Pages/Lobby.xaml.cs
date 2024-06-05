@@ -1,5 +1,5 @@
-﻿using AhorcadoCliente.ServiceReference1;
-using AhorcadoCliente.ServiceReference2;
+﻿using AhorcadoCliente.GameServices;
+using AhorcadoCliente.UserServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +22,7 @@ namespace AhorcadoCliente.Pages
     /// </summary>
     public partial class Lobby : Page
     {
-        List<Match> matchesAvaliables;
+        List<MatchGame> matchesAvaliables;
         GameServicesClient gameServicesClient = new GameServicesClient();
         public Lobby()
         {
@@ -33,16 +33,22 @@ namespace AhorcadoCliente.Pages
 
         private void joinMatch_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Te has unido a la partida!");
-            NavigationService.Navigate(new InGame());
-
+            if (MatchesDataGrid.SelectedItem is MatchGame selectedMatch)
+            {
+                MessageBox.Show("Te has unido a la partida!");
+                NavigationService.Navigate(new InGame(selectedMatch));
+            }
+            else
+            {
+                MessageBox.Show("Por favor, selecciona una partida.");
+            }
         }
 
         private async void getAvaliableMatches()
         {
             try
             {
-                Match[] aux = await gameServicesClient.getMatchListAsync();
+                MatchGame[] aux = await gameServicesClient.getMatchListAsync();
                 matchesAvaliables = aux.ToList();
                 if (matchesAvaliables.Count > 0)
                 {
@@ -61,7 +67,7 @@ namespace AhorcadoCliente.Pages
 
         private void LoadUserDetails()
         {
-            User user = SessionManager.Instance.LoggedInUser;
+            Player user = SessionManager.Instance.LoggedInPlayer;
             if (user != null)
             {
                 

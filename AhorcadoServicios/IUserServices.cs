@@ -13,6 +13,6 @@ namespace AhorcadoServicios
     public interface IUserServices
     {
         [OperationContract]
-        User logIn(string email, string password);
+        Player logIn(string email, string password);
     }
 }

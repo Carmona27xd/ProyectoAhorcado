@@ -1,4 +1,4 @@
-﻿using AhorcadoCliente.ServiceReference1;
+﻿using AhorcadoCliente.UserServices;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,7 +10,7 @@ public class SessionManager
     private static SessionManager _instance;
     private static readonly object _lock = new object();
 
-    public User LoggedInUser { get; private set; }
+    public Player LoggedInPlayer { get; private set; }
 
     private SessionManager() { }
 
@@ -32,13 +32,13 @@ public class SessionManager
         }
     }
 
-    public void Login(User user)
+    public void Login(Player player)
     {
-        LoggedInUser = user;
+        LoggedInPlayer = player;
     }
 
     public void Logout()
     {
-        LoggedInUser = null;
+        LoggedInPlayer = null;
     }
 }

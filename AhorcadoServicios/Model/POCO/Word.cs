@@ -6,21 +6,21 @@ using System.Web;
 
 namespace AhorcadoServicios.Model.POCO
 {
-    [Table(Name = "palabra")]
+    [Table(Name = "Word")]
     public class Word
     {
         [Column(IsPrimaryKey = true, IsDbGenerated = true)]
-        public int id_palabra { get; set; }
+        public int WordID { get; set; }
         [Column]
-        public int id_categoria { get; set; }
+        public int CategoryID { get; set; }
         [Column]
-        public string palabra_espanol { get; set; }
+        public string SpanishWord { get; set; }
         [Column]
-        public string palabra_ingles { get; set; }
+        public string EnglishWord { get; set; }
         [Column]
-        public string pista_espanol { get; set; }
+        public string SpanishClue { get; set; }
         [Column]
-        public string pista_ingles { get; set; }
+        public string EnglishClue { get; set; }
 
     }
 }

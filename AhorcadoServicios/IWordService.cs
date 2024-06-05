@@ -16,5 +16,9 @@ namespace AhorcadoServicios
         List<Category> GetCategories();
         [OperationContract]
         List<Word> GetWordsPerCategory(int category);
+        [OperationContract]
+        string getWordSpanish(int wordID);
+        [OperationContract]
+        string getWordEnglish(int wordID); 
     }
 }

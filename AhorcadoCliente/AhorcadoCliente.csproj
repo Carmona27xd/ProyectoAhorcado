@@ -57,12 +57,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Connected Services\ServiceReference2\Reference.cs">
+    <Compile Include="Connected Services\GameServices\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Connected Services\ServiceReference3\Reference.cs">
+    <Compile Include="Connected Services\UserServices\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\WordServices\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -84,11 +89,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Connected Services\ServiceReference1\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -148,46 +148,46 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="Connected Services\ServiceReference1\AhorcadoCliente.ServiceReference1.User.datasource">
+    <None Include="Connected Services\GameServices\AhorcadoCliente.GameServices.MatchGame.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference1\UserServices.wsdl" />
-    <None Include="Connected Services\ServiceReference1\UserServices.xsd">
+    <None Include="Connected Services\GameServices\GameServices.wsdl" />
+    <None Include="Connected Services\GameServices\GameServices.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference1\UserServices1.xsd">
+    <None Include="Connected Services\GameServices\GameServices1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference1\UserServices2.xsd">
+    <None Include="Connected Services\GameServices\GameServices2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference2\AhorcadoCliente.ServiceReference2.Match.datasource">
+    <None Include="Connected Services\UserServices\AhorcadoCliente.UserServices.Player.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference2\GameServices.wsdl" />
-    <None Include="Connected Services\ServiceReference2\GameServices.xsd">
+    <None Include="Connected Services\UserServices\UserServices.wsdl" />
+    <None Include="Connected Services\UserServices\UserServices.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference2\GameServices1.xsd">
+    <None Include="Connected Services\UserServices\UserServices1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference2\GameServices2.xsd">
+    <None Include="Connected Services\UserServices\UserServices2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference3\AhorcadoCliente.ServiceReference3.Category.datasource">
+    <None Include="Connected Services\WordServices\AhorcadoCliente.WordServices.Category.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference3\AhorcadoCliente.ServiceReference3.Word.datasource">
+    <None Include="Connected Services\WordServices\AhorcadoCliente.WordServices.Word.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReference3\WordService.wsdl" />
-    <None Include="Connected Services\ServiceReference3\WordService.xsd">
+    <None Include="Connected Services\WordServices\WordService.wsdl" />
+    <None Include="Connected Services\WordServices\WordService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference3\WordService1.xsd">
+    <None Include="Connected Services\WordServices\WordService1.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Connected Services\ServiceReference3\WordService2.xsd">
+    <None Include="Connected Services\WordServices\WordService2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
@@ -202,57 +202,6 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Connected Services\ServiceReference1\" />
-    <WCFMetadataStorage Include="Connected Services\ServiceReference2\" />
-    <WCFMetadataStorage Include="Connected Services\ServiceReference3\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\UserServices.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference1\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference2\GameServices.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference2\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference2\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference2\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference3\WordService.disco" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference3\configuration91.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference3\configuration.svcinfo" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Connected Services\ServiceReference3\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-  </ItemGroup>
-  <ItemGroup />
-  <ItemGroup>
     <Resource Include="Images\0.jpg" />
     <Resource Include="Images\1.jpg" />
     <Resource Include="Images\2.jpg" />
@@ -260,9 +209,35 @@
     <Resource Include="Images\4.jpg" />
     <Resource Include="Images\5.jpg" />
     <Resource Include="Images\6.jpg" />
+    <None Include="Connected Services\GameServices\GameServices.disco" />
+    <None Include="Connected Services\GameServices\configuration91.svcinfo" />
+    <None Include="Connected Services\GameServices\configuration.svcinfo" />
+    <None Include="Connected Services\GameServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\UserServices\UserServices.disco" />
+    <None Include="Connected Services\UserServices\configuration91.svcinfo" />
+    <None Include="Connected Services\UserServices\configuration.svcinfo" />
+    <None Include="Connected Services\UserServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\WordServices\WordService.disco" />
+    <None Include="Connected Services\WordServices\configuration91.svcinfo" />
+    <None Include="Connected Services\WordServices\configuration.svcinfo" />
+    <None Include="Connected Services\WordServices\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Music\Music.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\GameServices\" />
+    <WCFMetadataStorage Include="Connected Services\UserServices\" />
+    <WCFMetadataStorage Include="Connected Services\WordServices\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
