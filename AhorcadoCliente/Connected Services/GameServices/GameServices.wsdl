@@ -19,6 +19,72 @@
   <wsdl:message name="IGameServices_getMatchList_OutputMessage">
     <wsdl:part name="parameters" element="tns:getMatchListResponse" />
   </wsdl:message>
+  <wsdl:message name="IGameServices_initMatchGame_InputMessage">
+    <wsdl:part name="parameters" element="tns:initMatchGame" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_initMatchGame_OutputMessage">
+    <wsdl:part name="parameters" element="tns:initMatchGameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_leaveMatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:leaveMatch" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_leaveMatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:leaveMatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_finishMatch_InputMessage">
+    <wsdl:part name="parameters" element="tns:finishMatch" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_finishMatch_OutputMessage">
+    <wsdl:part name="parameters" element="tns:finishMatchResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_updateCharBD_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateCharBD" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_updateCharBD_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateCharBDResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_getMatchStatus_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMatchStatus" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_getMatchStatus_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMatchStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_updateRemainingAttempts_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateRemainingAttempts" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_updateRemainingAttempts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateRemainingAttemptsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_updateWinner_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateWinner" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_updateWinner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateWinnerResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_getGuestNickName_InputMessage">
+    <wsdl:part name="parameters" element="tns:getGuestNickName" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_getGuestNickName_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getGuestNickNameResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_isThereGuest_InputMessage">
+    <wsdl:part name="parameters" element="tns:isThereGuest" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_isThereGuest_OutputMessage">
+    <wsdl:part name="parameters" element="tns:isThereGuestResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_getGuestLetter_InputMessage">
+    <wsdl:part name="parameters" element="tns:getGuestLetter" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_getGuestLetter_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getGuestLetterResponse" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_getRemainingAttempts_InputMessage">
+    <wsdl:part name="parameters" element="tns:getRemainingAttempts" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_getRemainingAttempts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getRemainingAttemptsResponse" />
+  </wsdl:message>
   <wsdl:portType name="IGameServices">
     <wsdl:operation name="createMatch">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/createMatch" message="tns:IGameServices_createMatch_InputMessage" />
@@ -27,6 +93,50 @@
     <wsdl:operation name="getMatchList">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/getMatchList" message="tns:IGameServices_getMatchList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGameServices/getMatchListResponse" message="tns:IGameServices_getMatchList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="initMatchGame">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/initMatchGame" message="tns:IGameServices_initMatchGame_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameServices/initMatchGameResponse" message="tns:IGameServices_initMatchGame_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="leaveMatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/leaveMatch" message="tns:IGameServices_leaveMatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameServices/leaveMatchResponse" message="tns:IGameServices_leaveMatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="finishMatch">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/finishMatch" message="tns:IGameServices_finishMatch_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameServices/finishMatchResponse" message="tns:IGameServices_finishMatch_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateCharBD">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/updateCharBD" message="tns:IGameServices_updateCharBD_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameServices/updateCharBDResponse" message="tns:IGameServices_updateCharBD_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMatchStatus">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/getMatchStatus" message="tns:IGameServices_getMatchStatus_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameServices/getMatchStatusResponse" message="tns:IGameServices_getMatchStatus_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateRemainingAttempts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/updateRemainingAttempts" message="tns:IGameServices_updateRemainingAttempts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameServices/updateRemainingAttemptsResponse" message="tns:IGameServices_updateRemainingAttempts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateWinner">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/updateWinner" message="tns:IGameServices_updateWinner_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameServices/updateWinnerResponse" message="tns:IGameServices_updateWinner_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getGuestNickName">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/getGuestNickName" message="tns:IGameServices_getGuestNickName_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameServices/getGuestNickNameResponse" message="tns:IGameServices_getGuestNickName_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="isThereGuest">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/isThereGuest" message="tns:IGameServices_isThereGuest_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameServices/isThereGuestResponse" message="tns:IGameServices_isThereGuest_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getGuestLetter">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/getGuestLetter" message="tns:IGameServices_getGuestLetter_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameServices/getGuestLetterResponse" message="tns:IGameServices_getGuestLetter_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getRemainingAttempts">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/getRemainingAttempts" message="tns:IGameServices_getRemainingAttempts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameServices/getRemainingAttemptsResponse" message="tns:IGameServices_getRemainingAttempts_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IGameServices" type="tns:IGameServices">
@@ -42,6 +152,105 @@
     </wsdl:operation>
     <wsdl:operation name="getMatchList">
       <soap:operation soapAction="http://tempuri.org/IGameServices/getMatchList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="initMatchGame">
+      <soap:operation soapAction="http://tempuri.org/IGameServices/initMatchGame" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="leaveMatch">
+      <soap:operation soapAction="http://tempuri.org/IGameServices/leaveMatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="finishMatch">
+      <soap:operation soapAction="http://tempuri.org/IGameServices/finishMatch" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateCharBD">
+      <soap:operation soapAction="http://tempuri.org/IGameServices/updateCharBD" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMatchStatus">
+      <soap:operation soapAction="http://tempuri.org/IGameServices/getMatchStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateRemainingAttempts">
+      <soap:operation soapAction="http://tempuri.org/IGameServices/updateRemainingAttempts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateWinner">
+      <soap:operation soapAction="http://tempuri.org/IGameServices/updateWinner" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGuestNickName">
+      <soap:operation soapAction="http://tempuri.org/IGameServices/getGuestNickName" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="isThereGuest">
+      <soap:operation soapAction="http://tempuri.org/IGameServices/isThereGuest" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getGuestLetter">
+      <soap:operation soapAction="http://tempuri.org/IGameServices/getGuestLetter" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getRemainingAttempts">
+      <soap:operation soapAction="http://tempuri.org/IGameServices/getRemainingAttempts" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

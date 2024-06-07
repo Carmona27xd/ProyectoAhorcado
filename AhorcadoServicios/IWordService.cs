@@ -20,5 +20,9 @@ namespace AhorcadoServicios
         string getWordSpanish(int wordID);
         [OperationContract]
         string getWordEnglish(int wordID); 
+        [OperationContract]
+        string getClueSpanish(int wordID);
+        [OperationContract]
+        string getClueEnglish(int wordID);
     }
 }

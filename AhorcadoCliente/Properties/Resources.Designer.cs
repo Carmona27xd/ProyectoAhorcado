@@ -97,6 +97,15 @@ namespace AhorcadoCliente.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a El retador ha dejado el juego.
+        /// </summary>
+        public static string ChallengerLeaveMatchMessage {
+            get {
+                return ResourceManager.GetString("ChallengerLeaveMatchMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Crear cuenta.
         /// </summary>
         public static string CreateAccountButton {
@@ -223,6 +232,15 @@ namespace AhorcadoCliente.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a El invitado dejo el juego!.
+        /// </summary>
+        public static string GuestLeaveMatchMessage {
+            get {
+                return ResourceManager.GetString("GuestLeaveMatchMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Por favor ingresa todos los datos!.
         /// </summary>
         public static string IncompleteLogginMessage {
@@ -237,6 +255,24 @@ namespace AhorcadoCliente.Properties {
         public static string IntroButton {
             get {
                 return ResourceManager.GetString("IntroButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Te has unido a la partida!.
+        /// </summary>
+        public static string JoinGameMessage {
+            get {
+                return ResourceManager.GetString("JoinGameMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error al unirse a la partida.
+        /// </summary>
+        public static string JoinMatchErrorMessage {
+            get {
+                return ResourceManager.GetString("JoinMatchErrorMessage", resourceCulture);
             }
         }
         
@@ -264,6 +300,42 @@ namespace AhorcadoCliente.Properties {
         public static string LogginMessage {
             get {
                 return ResourceManager.GetString("LogginMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Perdiste!.
+        /// </summary>
+        public static string LosserMatchMessage {
+            get {
+                return ResourceManager.GetString("LosserMatchMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Partida creada!.
+        /// </summary>
+        public static string MatchCreatedMessage {
+            get {
+                return ResourceManager.GetString("MatchCreatedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Has abandonado la partida.
+        /// </summary>
+        public static string MatchLeaveMessage {
+            get {
+                return ResourceManager.GetString("MatchLeaveMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error al abandonar la partida.
+        /// </summary>
+        public static string MatchLeaveMessageError {
+            get {
+                return ResourceManager.GetString("MatchLeaveMessageError", resourceCulture);
             }
         }
         
@@ -309,6 +381,15 @@ namespace AhorcadoCliente.Properties {
         public static string PasswordRegister {
             get {
                 return ResourceManager.GetString("PasswordRegister", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Otro jugador se ha unido!.
+        /// </summary>
+        public static string PlayerJoinedMessage {
+            get {
+                return ResourceManager.GetString("PlayerJoinedMessage", resourceCulture);
             }
         }
         
@@ -372,6 +453,33 @@ namespace AhorcadoCliente.Properties {
         public static string UserRegisterLabel {
             get {
                 return ResourceManager.GetString("UserRegisterLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Esperando a otro jugador.
+        /// </summary>
+        public static string WaitGuestMessage {
+            get {
+                return ResourceManager.GetString("WaitGuestMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El invitado no adivino la palabra, ganaste!.
+        /// </summary>
+        public static string WinnerMatchMessageChallenger {
+            get {
+                return ResourceManager.GetString("WinnerMatchMessageChallenger", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Adivinaste la palabra, Ganaste!.
+        /// </summary>
+        public static string WinnerMatchMessageGuest {
+            get {
+                return ResourceManager.GetString("WinnerMatchMessageGuest", resourceCulture);
             }
         }
     }

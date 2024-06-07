@@ -15,7 +15,7 @@
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,10">
-            <Button Content="{x:Static p:Resources.LeaveMatchButton}" Height="35" Width="130" Margin="5"/>
+            <Button Content="{x:Static p:Resources.LeaveMatchButton}" Height="35" Width="130" Margin="5" Click="LeaveMatch_Click"/>
         </StackPanel>
         <Image Name="imageControl" Source="pack://application:,,,/Images/0.jpg" HorizontalAlignment="Left" Height="200" Margin="450,50,0,0" VerticalAlignment="Top" Width="200"/>
         <Button x:Name="IButton" Content="I" HorizontalAlignment="Left" Margin="530,369,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
@@ -46,6 +46,7 @@
         <Button x:Name="NButton" Content="N" HorizontalAlignment="Left" Margin="465,449,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
         <Button x:Name="BButton" Content="B" HorizontalAlignment="Left" Margin="400,449,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
         <WrapPanel x:Name="WordPanel" Margin="60,270,60,0" VerticalAlignment="Top" Height="auto" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="txtBockClue" HorizontalAlignment="Left" Margin="75,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="200" Width="355" FontSize="20"/>
     </Grid>
 </Page>
 

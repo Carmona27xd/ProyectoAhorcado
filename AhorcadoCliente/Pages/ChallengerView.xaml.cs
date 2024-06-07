@@ -1,5 +1,4 @@
 ﻿using AhorcadoCliente.GameServices;
-using AhorcadoCliente.UserServices;
 using AhorcadoCliente.WordServices;
 using System;
 using System.Collections.Generic;
@@ -20,24 +19,22 @@ using System.Windows.Threading;
 namespace AhorcadoCliente.Pages
 {
     /// <summary>
-    /// Lógica de interacción para InGame.xaml
+    /// Lógica de interacción para ChallengerView.xaml
     /// </summary>
-    public partial class InGame : Page
+    public partial class ChallengerView : Page
     {
         private DispatcherTimer dispatcherTimer;
         private List<TextBlock> textBlocks = new List<TextBlock>();
         GameServices.GameServicesClient gameServicesClient = new GameServicesClient();
         WordServiceClient wordServiceClient = new WordServiceClient();
-        MatchGame matchGame;
-        private List<char> charListWord;
-        private HashSet<char> guessedLetters = new HashSet<char>();
         string word;
         string clue;
-        char selectedLetter;
-        int errorCounter = 0;
-        int remainingAttempts = 6;
+        char? guestSelectLetter;
+        int remainingAttempts;
+        private int initialAttempts = 6;
+        MatchGame matchGame;
 
-        public InGame(MatchGame matchGame)
+        public ChallengerView(MatchGame matchGame)
         {
             InitializeComponent();
             LoadMatchWord(matchGame);
@@ -47,45 +44,75 @@ namespace AhorcadoCliente.Pages
             dispatcherTimer.Interval = TimeSpan.FromSeconds(1);
             dispatcherTimer.Tick += DispatcherTimer_Tick;
             dispatcherTimer.Start();
+
         }
+
         private void DispatcherTimer_Tick(object sender, EventArgs e)
         {
             checkMatchStatus();
-        }
-
-        private void updateCharSelectDB(char  selectedLetter)
-        {
-            this.selectedLetter = selectedLetter;
+            getGuestLetter(matchGame);
+            updateImage();
             
-            try
+        }
+
+        private void getGuestLetter(MatchGame matchID)
+        {
+            char? guestSelectLetter = gameServicesClient.getGuestLetter(matchGame.MatchID);
+
+            if (guestSelectLetter.HasValue)
             {
-                bool confirmation = gameServicesClient.updateCharBD(selectedLetter, matchGame.MatchID);
-                if (!confirmation)
-                {
-                    MessageBox.Show("Error al actualizar la letra en la base de datos");
-                }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                char selectLetter = guestSelectLetter.Value;
+                updateWordLines(selectLetter);
             }
         }
 
-        private void updateRemainingAttempts(int remainingAttempts)
+        private int getRemainingAttempts(MatchGame matchGame)
         {
-            this.remainingAttempts = remainingAttempts;
+            remainingAttempts = gameServicesClient.getRemainingAttempts(matchGame.MatchID);
+            return remainingAttempts;
+        }
 
-            try
+        private void updateImage()
+        {
+            int newRemainingAttempts = gameServicesClient.getRemainingAttempts(matchGame.MatchID);
+            if (newRemainingAttempts != remainingAttempts) 
             {
-                bool confirmation = gameServicesClient.updateRemainingAttempts(remainingAttempts, matchGame.MatchID);
-                if (!confirmation)
-                {
-                    MessageBox.Show("Error al actualizar los intentos restantes");
-                }
+                remainingAttempts = newRemainingAttempts;
+                int errorCounter = 6 - remainingAttempts; 
+                changeImage(errorCounter);
             }
-            catch (Exception ex)
+            else if (remainingAttempts == 0)
             {
-                MessageBox.Show(ex.Message);
+                gameServicesClient.finishMatch(matchGame.MatchID);
+                string message = Properties.Resources.WinnerMatchMessageChallenger;
+                MessageBox.Show(message);
+                NavigationService.Navigate(new Lobby());
+            }
+        }
+
+        private void changeImage(int errorCounter)
+        {
+            string imagePath = $"pack://application:,,,/Images/{errorCounter}.jpg";
+            imageControl.Source = new BitmapImage(new Uri(imagePath));
+        }
+
+        private void waitGuest(bool thereIsGuest)
+        {
+            while (!thereIsGuest) 
+            { 
+                string message = Properties.Resources.WaitGuestMessage;
+                MessageBox.Show(message);
+            }
+
+        }
+        private void updateWordLines(char Letter)
+        {
+            for (int i = 0; i < word.Length; i++)
+            {
+                if (word[i] == Letter)
+                {
+                    textBlocks[i].Text = Letter.ToString();
+                }
             }
         }
 
@@ -108,7 +135,7 @@ namespace AhorcadoCliente.Pages
                 WordPanel.Children.Add(texBlock);
             }
         }
-        
+
         private async void loadMatchClue(MatchGame matchGame)
         {
             try
@@ -128,7 +155,6 @@ namespace AhorcadoCliente.Pages
             {
                 word = await getMatchWordAsync(matchGame);
                 generateWordLines(word);
-                charListWord = new List<char>(word.ToCharArray()); 
             }
             catch (Exception e)
             {
@@ -178,100 +204,17 @@ namespace AhorcadoCliente.Pages
             return wordMatch;
         }
 
-        private void LetterButton_Click(object sender, RoutedEventArgs e)
-        {
-            Button button = sender as Button;
-            if (button != null)
-            {
-                char letter = button.Content.ToString()[0];
-                updateCharSelectDB(letter);
-
-                if (isLetterInWord(letter, word))
-                {
-                    updateWordLines(letter);
-                    guessedLetters.Add(letter); 
-
-                    if (wordIsComplete())
-                    {
-                        Player player = SessionManager.Instance.LoggedInPlayer;
-                        gameServicesClient.updateWinner(player.PlayerID, matchGame.MatchID);
-                        gameServicesClient.finishMatch(matchGame.MatchID);
-                        string message = Properties.Resources.WinnerMatchMessageGuest;
-                        MessageBox.Show(message);
-                        NavigationService.Navigate(new Lobby());
-                    }
-                }
-                else
-                {
-                    remainingAttempts--;
-                    updateRemainingAttempts(remainingAttempts);
-                    errorCounter++;
-                    UpdateHangmanImage(errorCounter);
-
-                    if (remainingAttempts == 0)
-                    {
-                        string message = Properties.Resources.LosserMatchMessage;
-                        MessageBox.Show(message);
-                        gameServicesClient.updateWinner(matchGame.ChallengerID, matchGame.MatchID);
-                        gameServicesClient.finishMatch(matchGame.MatchID);
-                        NavigationService.Navigate(new Lobby());
-                    }
-                }
-                button.IsEnabled = false;
-            }
-        }
-
-
-        private bool wordIsComplete()
-        {
-            return !charListWord.Except(guessedLetters).Any();
-        }
-
-        private void UpdateHangmanImage(int errorCounter)
-        {
-            string imagePath = $"pack://application:,,,/Images/{errorCounter}.jpg"; 
-            imageControl.Source = new BitmapImage(new Uri(imagePath));
-        }
-
-        private void updateWordLines(char Letter)
-        {
-            for (int i = 0; i < word.Length; i++)
-            {
-                if (word[i] == Letter)
-                {
-                    textBlocks[i].Text = Letter.ToString();
-                }
-            }
-        }
-
-        private void checkMatchStatus()
-        {
-            int matchStatus = gameServicesClient.getMatchStatus(matchGame.MatchID);
-            if (matchStatus == 2)
-            {
-                string message = Properties.Resources.ChallengerLeaveMatchMessage;  
-                MessageBox.Show(message);
-                NavigationService.Navigate(new Lobby());
-                dispatcherTimer.Stop();
-            }
-        }
-
-        private bool isLetterInWord(char letter, string word)
-        {
-            return word.Contains(letter);
-        }
-
         private void LeaveMatch_Click(object sender, RoutedEventArgs e)
         {
-            
+
             MessageBoxResult result = MessageBox.Show("Deseas abandonar la partida?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
 
             if (result == MessageBoxResult.Yes)
             {
-                
+
                 LeaveMatch();
             }
-            
+
         }
 
         private void LeaveMatch()
@@ -298,6 +241,17 @@ namespace AhorcadoCliente.Pages
                 MessageBox.Show(e.Message);
             }
         }
+
+        private void checkMatchStatus()
+        {
+            int matchStatus = gameServicesClient.getMatchStatus(matchGame.MatchID);
+            if (matchStatus == 2)
+            {
+                string message = Properties.Resources.ChallengerLeaveMatchMessage;
+                MessageBox.Show(message);
+                NavigationService.Navigate(new Lobby());
+                dispatcherTimer.Stop();
+            }
+        }
     }
 }
-

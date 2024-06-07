@@ -42,10 +42,12 @@ namespace AhorcadoCliente.Pages
             try
             {
                 MatchGame newMatch = createNewMatch();
-                bool confirmation = await gameServicesClient.createMatchAsync(newMatch);
-                if (confirmation)
+                MatchGame confirmation = await gameServicesClient.createMatchAsync(newMatch);
+                if (confirmation != null)
                 {
-                    MessageBox.Show("Partida creada con exito");
+                    string message = Properties.Resources.MatchCreatedMessage;
+                    MessageBox.Show(message); 
+                    NavigationService.Navigate(new WaitingGuest(confirmation));
                 }
 
             }
@@ -122,10 +124,7 @@ namespace AhorcadoCliente.Pages
 
         private void cancelMatchCreation()
         {
-            if (NavigationService.CanGoBack)
-            {
-                NavigationService.GoBack();
-            }
+            NavigationService.Navigate(new Lobby());
         }
         private MatchGame createNewMatch()
         {

@@ -13,9 +13,31 @@ namespace AhorcadoServicios
     public interface IGameServices
     {
         [OperationContract]
-        bool createMatch(MatchGame createMatch);
+        MatchGame createMatch(MatchGame createMatch);
         [OperationContract]
         List<MatchGame> getMatchList();
+        [OperationContract]
+        bool initMatchGame(int guestID, int matchID);
+        [OperationContract]
+        bool leaveMatch(int matchID);
+        [OperationContract]
+        bool finishMatch(int matchID);
+        [OperationContract]
+        bool updateCharBD(char letter, int matchID);
+        [OperationContract]
+        int getMatchStatus(int matchID);
+        [OperationContract]
+        bool updateRemainingAttempts(int remainingAttempts, int matchID);
+        [OperationContract]
+        bool updateWinner(int playerID, int matchID);
+        [OperationContract]
+        string getGuestNickName(int playerID);
+        [OperationContract]
+        bool isThereGuest(int matchID);
+        [OperationContract]
+        char? getGuestLetter(int matchID);
+        [OperationContract]
+        int getRemainingAttempts(int matchID);
 
     }
 }

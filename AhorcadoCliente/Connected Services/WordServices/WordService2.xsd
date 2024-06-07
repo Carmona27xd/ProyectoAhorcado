@@ -55,4 +55,32 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getClueSpanish">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="wordID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getClueSpanishResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getClueSpanishResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getClueEnglish">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="wordID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getClueEnglishResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getClueEnglishResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

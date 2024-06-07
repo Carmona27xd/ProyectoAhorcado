@@ -239,16 +239,82 @@ namespace AhorcadoCliente.GameServices {
     public interface IGameServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/createMatch", ReplyAction="http://tempuri.org/IGameServices/createMatchResponse")]
-        bool createMatch([System.ServiceModel.MessageParameterAttribute(Name="createMatch")] AhorcadoCliente.GameServices.MatchGame createMatch1);
+        AhorcadoCliente.GameServices.MatchGame createMatch([System.ServiceModel.MessageParameterAttribute(Name="createMatch")] AhorcadoCliente.GameServices.MatchGame createMatch1);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/createMatch", ReplyAction="http://tempuri.org/IGameServices/createMatchResponse")]
-        System.Threading.Tasks.Task<bool> createMatchAsync(AhorcadoCliente.GameServices.MatchGame createMatch);
+        System.Threading.Tasks.Task<AhorcadoCliente.GameServices.MatchGame> createMatchAsync(AhorcadoCliente.GameServices.MatchGame createMatch);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/getMatchList", ReplyAction="http://tempuri.org/IGameServices/getMatchListResponse")]
         AhorcadoCliente.GameServices.MatchGame[] getMatchList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/getMatchList", ReplyAction="http://tempuri.org/IGameServices/getMatchListResponse")]
         System.Threading.Tasks.Task<AhorcadoCliente.GameServices.MatchGame[]> getMatchListAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/initMatchGame", ReplyAction="http://tempuri.org/IGameServices/initMatchGameResponse")]
+        bool initMatchGame(int guestID, int matchID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/initMatchGame", ReplyAction="http://tempuri.org/IGameServices/initMatchGameResponse")]
+        System.Threading.Tasks.Task<bool> initMatchGameAsync(int guestID, int matchID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/leaveMatch", ReplyAction="http://tempuri.org/IGameServices/leaveMatchResponse")]
+        bool leaveMatch(int matchID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/leaveMatch", ReplyAction="http://tempuri.org/IGameServices/leaveMatchResponse")]
+        System.Threading.Tasks.Task<bool> leaveMatchAsync(int matchID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/finishMatch", ReplyAction="http://tempuri.org/IGameServices/finishMatchResponse")]
+        bool finishMatch(int matchID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/finishMatch", ReplyAction="http://tempuri.org/IGameServices/finishMatchResponse")]
+        System.Threading.Tasks.Task<bool> finishMatchAsync(int matchID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/updateCharBD", ReplyAction="http://tempuri.org/IGameServices/updateCharBDResponse")]
+        bool updateCharBD(char letter, int matchID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/updateCharBD", ReplyAction="http://tempuri.org/IGameServices/updateCharBDResponse")]
+        System.Threading.Tasks.Task<bool> updateCharBDAsync(char letter, int matchID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/getMatchStatus", ReplyAction="http://tempuri.org/IGameServices/getMatchStatusResponse")]
+        int getMatchStatus(int matchID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/getMatchStatus", ReplyAction="http://tempuri.org/IGameServices/getMatchStatusResponse")]
+        System.Threading.Tasks.Task<int> getMatchStatusAsync(int matchID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/updateRemainingAttempts", ReplyAction="http://tempuri.org/IGameServices/updateRemainingAttemptsResponse")]
+        bool updateRemainingAttempts(int remainingAttempts, int matchID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/updateRemainingAttempts", ReplyAction="http://tempuri.org/IGameServices/updateRemainingAttemptsResponse")]
+        System.Threading.Tasks.Task<bool> updateRemainingAttemptsAsync(int remainingAttempts, int matchID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/updateWinner", ReplyAction="http://tempuri.org/IGameServices/updateWinnerResponse")]
+        bool updateWinner(int playerID, int matchID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/updateWinner", ReplyAction="http://tempuri.org/IGameServices/updateWinnerResponse")]
+        System.Threading.Tasks.Task<bool> updateWinnerAsync(int playerID, int matchID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/getGuestNickName", ReplyAction="http://tempuri.org/IGameServices/getGuestNickNameResponse")]
+        string getGuestNickName(int playerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/getGuestNickName", ReplyAction="http://tempuri.org/IGameServices/getGuestNickNameResponse")]
+        System.Threading.Tasks.Task<string> getGuestNickNameAsync(int playerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/isThereGuest", ReplyAction="http://tempuri.org/IGameServices/isThereGuestResponse")]
+        bool isThereGuest(int matchID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/isThereGuest", ReplyAction="http://tempuri.org/IGameServices/isThereGuestResponse")]
+        System.Threading.Tasks.Task<bool> isThereGuestAsync(int matchID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/getGuestLetter", ReplyAction="http://tempuri.org/IGameServices/getGuestLetterResponse")]
+        System.Nullable<char> getGuestLetter(int matchID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/getGuestLetter", ReplyAction="http://tempuri.org/IGameServices/getGuestLetterResponse")]
+        System.Threading.Tasks.Task<System.Nullable<char>> getGuestLetterAsync(int matchID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/getRemainingAttempts", ReplyAction="http://tempuri.org/IGameServices/getRemainingAttemptsResponse")]
+        int getRemainingAttempts(int matchID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/getRemainingAttempts", ReplyAction="http://tempuri.org/IGameServices/getRemainingAttemptsResponse")]
+        System.Threading.Tasks.Task<int> getRemainingAttemptsAsync(int matchID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -278,11 +344,11 @@ namespace AhorcadoCliente.GameServices {
                 base(binding, remoteAddress) {
         }
         
-        public bool createMatch(AhorcadoCliente.GameServices.MatchGame createMatch1) {
+        public AhorcadoCliente.GameServices.MatchGame createMatch(AhorcadoCliente.GameServices.MatchGame createMatch1) {
             return base.Channel.createMatch(createMatch1);
         }
         
-        public System.Threading.Tasks.Task<bool> createMatchAsync(AhorcadoCliente.GameServices.MatchGame createMatch) {
+        public System.Threading.Tasks.Task<AhorcadoCliente.GameServices.MatchGame> createMatchAsync(AhorcadoCliente.GameServices.MatchGame createMatch) {
             return base.Channel.createMatchAsync(createMatch);
         }
         
@@ -292,6 +358,94 @@ namespace AhorcadoCliente.GameServices {
         
         public System.Threading.Tasks.Task<AhorcadoCliente.GameServices.MatchGame[]> getMatchListAsync() {
             return base.Channel.getMatchListAsync();
+        }
+        
+        public bool initMatchGame(int guestID, int matchID) {
+            return base.Channel.initMatchGame(guestID, matchID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> initMatchGameAsync(int guestID, int matchID) {
+            return base.Channel.initMatchGameAsync(guestID, matchID);
+        }
+        
+        public bool leaveMatch(int matchID) {
+            return base.Channel.leaveMatch(matchID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> leaveMatchAsync(int matchID) {
+            return base.Channel.leaveMatchAsync(matchID);
+        }
+        
+        public bool finishMatch(int matchID) {
+            return base.Channel.finishMatch(matchID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> finishMatchAsync(int matchID) {
+            return base.Channel.finishMatchAsync(matchID);
+        }
+        
+        public bool updateCharBD(char letter, int matchID) {
+            return base.Channel.updateCharBD(letter, matchID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> updateCharBDAsync(char letter, int matchID) {
+            return base.Channel.updateCharBDAsync(letter, matchID);
+        }
+        
+        public int getMatchStatus(int matchID) {
+            return base.Channel.getMatchStatus(matchID);
+        }
+        
+        public System.Threading.Tasks.Task<int> getMatchStatusAsync(int matchID) {
+            return base.Channel.getMatchStatusAsync(matchID);
+        }
+        
+        public bool updateRemainingAttempts(int remainingAttempts, int matchID) {
+            return base.Channel.updateRemainingAttempts(remainingAttempts, matchID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> updateRemainingAttemptsAsync(int remainingAttempts, int matchID) {
+            return base.Channel.updateRemainingAttemptsAsync(remainingAttempts, matchID);
+        }
+        
+        public bool updateWinner(int playerID, int matchID) {
+            return base.Channel.updateWinner(playerID, matchID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> updateWinnerAsync(int playerID, int matchID) {
+            return base.Channel.updateWinnerAsync(playerID, matchID);
+        }
+        
+        public string getGuestNickName(int playerID) {
+            return base.Channel.getGuestNickName(playerID);
+        }
+        
+        public System.Threading.Tasks.Task<string> getGuestNickNameAsync(int playerID) {
+            return base.Channel.getGuestNickNameAsync(playerID);
+        }
+        
+        public bool isThereGuest(int matchID) {
+            return base.Channel.isThereGuest(matchID);
+        }
+        
+        public System.Threading.Tasks.Task<bool> isThereGuestAsync(int matchID) {
+            return base.Channel.isThereGuestAsync(matchID);
+        }
+        
+        public System.Nullable<char> getGuestLetter(int matchID) {
+            return base.Channel.getGuestLetter(matchID);
+        }
+        
+        public System.Threading.Tasks.Task<System.Nullable<char>> getGuestLetterAsync(int matchID) {
+            return base.Channel.getGuestLetterAsync(matchID);
+        }
+        
+        public int getRemainingAttempts(int matchID) {
+            return base.Channel.getRemainingAttempts(matchID);
+        }
+        
+        public System.Threading.Tasks.Task<int> getRemainingAttemptsAsync(int matchID) {
+            return base.Channel.getRemainingAttemptsAsync(matchID);
         }
     }
 }

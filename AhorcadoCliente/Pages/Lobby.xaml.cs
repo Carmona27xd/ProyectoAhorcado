@@ -35,12 +35,19 @@ namespace AhorcadoCliente.Pages
         {
             if (MatchesDataGrid.SelectedItem is MatchGame selectedMatch)
             {
-                MessageBox.Show("Te has unido a la partida!");
-                NavigationService.Navigate(new InGame(selectedMatch));
-            }
-            else
-            {
-                MessageBox.Show("Por favor, selecciona una partida.");
+                try
+                {
+                    Player user = SessionManager.Instance.LoggedInPlayer;
+                    gameServicesClient.initMatchGame(user.PlayerID, selectedMatch.MatchID);
+                    string message = Properties.Resources.JoinGameMessage;
+                    MessageBox.Show(message);
+                    NavigationService.Navigate(new InGame(selectedMatch));
+                }
+                catch (Exception ex)
+                {
+                    string message = Properties.Resources.JoinMatchErrorMessage;
+                    MessageBox.Show(message);
+                }
             }
         }
 
@@ -53,10 +60,6 @@ namespace AhorcadoCliente.Pages
                 if (matchesAvaliables.Count > 0)
                 {
                     MatchesDataGrid.ItemsSource = matchesAvaliables;
-                }
-                else
-                {
-                    MessageBox.Show("El matchesAvaliables esta vacio");
                 }
             }
             catch (Exception ex)

@@ -22,6 +22,16 @@ namespace AhorcadoServicios
             return CategoryDTO.getCategories();
         }
 
+        public string getClueEnglish(int wordID)
+        {
+            return WordDTO.getClueEnglish(wordID);
+        }
+
+        public string getClueSpanish(int wordID)
+        {
+            return WordDTO.getClueSpanish(wordID);
+        }
+
         public string getWordEnglish(int wordID)
         {
             return WordDTO.getWordEnglish(wordID);

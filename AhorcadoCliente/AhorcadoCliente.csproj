@@ -72,6 +72,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ChallengerView.xaml.cs">
+      <DependentUpon>ChallengerView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\CreateMatch.xaml.cs">
       <DependentUpon>CreateMatch.xaml</DependentUpon>
     </Compile>
@@ -80,6 +83,9 @@
     </Compile>
     <Compile Include="Pages\Lobby.xaml.cs">
       <DependentUpon>Lobby.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\WaitingGuest.xaml.cs">
+      <DependentUpon>WaitingGuest.xaml</DependentUpon>
     </Compile>
     <Compile Include="SingletonLoggin\SessionManager.cs" />
     <Page Include="MainWindow.xaml">
@@ -94,6 +100,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\ChallengerView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\CreateMatch.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -111,6 +121,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\UserRegister.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\WaitingGuest.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -230,6 +244,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Resource Include="Images\PlayerIcon.png" />
     <Content Include="Music\Music.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

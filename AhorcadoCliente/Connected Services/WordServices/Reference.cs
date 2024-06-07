@@ -242,6 +242,18 @@ namespace AhorcadoCliente.WordServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWordService/getWordEnglish", ReplyAction="http://tempuri.org/IWordService/getWordEnglishResponse")]
         System.Threading.Tasks.Task<string> getWordEnglishAsync(int wordID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWordService/getClueSpanish", ReplyAction="http://tempuri.org/IWordService/getClueSpanishResponse")]
+        string getClueSpanish(int wordID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWordService/getClueSpanish", ReplyAction="http://tempuri.org/IWordService/getClueSpanishResponse")]
+        System.Threading.Tasks.Task<string> getClueSpanishAsync(int wordID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWordService/getClueEnglish", ReplyAction="http://tempuri.org/IWordService/getClueEnglishResponse")]
+        string getClueEnglish(int wordID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWordService/getClueEnglish", ReplyAction="http://tempuri.org/IWordService/getClueEnglishResponse")]
+        System.Threading.Tasks.Task<string> getClueEnglishAsync(int wordID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -301,6 +313,22 @@ namespace AhorcadoCliente.WordServices {
         
         public System.Threading.Tasks.Task<string> getWordEnglishAsync(int wordID) {
             return base.Channel.getWordEnglishAsync(wordID);
+        }
+        
+        public string getClueSpanish(int wordID) {
+            return base.Channel.getClueSpanish(wordID);
+        }
+        
+        public System.Threading.Tasks.Task<string> getClueSpanishAsync(int wordID) {
+            return base.Channel.getClueSpanishAsync(wordID);
+        }
+        
+        public string getClueEnglish(int wordID) {
+            return base.Channel.getClueEnglish(wordID);
+        }
+        
+        public System.Threading.Tasks.Task<string> getClueEnglishAsync(int wordID) {
+            return base.Channel.getClueEnglishAsync(wordID);
         }
     }
 }

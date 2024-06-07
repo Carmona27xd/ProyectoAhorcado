@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:50294/GameServices.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/AhorcadoServicios.Model.POCO" />
+  <xs:import schemaLocation="http://localhost:50294/GameServices.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:element name="createMatch">
     <xs:complexType>
       <xs:sequence>
@@ -11,7 +12,7 @@
   <xs:element name="createMatchResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element minOccurs="0" name="createMatchResult" type="xs:boolean" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/AhorcadoServicios.Model.POCO" minOccurs="0" name="createMatchResult" nillable="true" type="q2:MatchGame" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -23,7 +24,165 @@
   <xs:element name="getMatchListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/AhorcadoServicios.Model.POCO" minOccurs="0" name="getMatchListResult" nillable="true" type="q2:ArrayOfMatchGame" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/AhorcadoServicios.Model.POCO" minOccurs="0" name="getMatchListResult" nillable="true" type="q3:ArrayOfMatchGame" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="initMatchGame">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="guestID" type="xs:int" />
+        <xs:element minOccurs="0" name="matchID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="initMatchGameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="initMatchGameResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="leaveMatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="leaveMatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="leaveMatchResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="finishMatch">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="finishMatchResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="finishMatchResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateCharBD">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="letter" type="q4:char" />
+        <xs:element minOccurs="0" name="matchID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateCharBDResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="updateCharBDResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMatchStatus">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMatchStatusResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getMatchStatusResult" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateRemainingAttempts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="remainingAttempts" type="xs:int" />
+        <xs:element minOccurs="0" name="matchID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateRemainingAttemptsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="updateRemainingAttemptsResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateWinner">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playerID" type="xs:int" />
+        <xs:element minOccurs="0" name="matchID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updateWinnerResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="updateWinnerResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getGuestNickName">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playerID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getGuestNickNameResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getGuestNickNameResult" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="isThereGuest">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="isThereGuestResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="isThereGuestResult" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getGuestLetter">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getGuestLetterResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="getGuestLetterResult" nillable="true" type="q5:char" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRemainingAttempts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="matchID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getRemainingAttemptsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="getRemainingAttemptsResult" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

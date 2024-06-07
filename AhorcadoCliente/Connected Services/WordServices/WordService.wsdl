@@ -31,6 +31,18 @@
   <wsdl:message name="IWordService_getWordEnglish_OutputMessage">
     <wsdl:part name="parameters" element="tns:getWordEnglishResponse" />
   </wsdl:message>
+  <wsdl:message name="IWordService_getClueSpanish_InputMessage">
+    <wsdl:part name="parameters" element="tns:getClueSpanish" />
+  </wsdl:message>
+  <wsdl:message name="IWordService_getClueSpanish_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getClueSpanishResponse" />
+  </wsdl:message>
+  <wsdl:message name="IWordService_getClueEnglish_InputMessage">
+    <wsdl:part name="parameters" element="tns:getClueEnglish" />
+  </wsdl:message>
+  <wsdl:message name="IWordService_getClueEnglish_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getClueEnglishResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWordService">
     <wsdl:operation name="GetCategories">
       <wsdl:input wsaw:Action="http://tempuri.org/IWordService/GetCategories" message="tns:IWordService_GetCategories_InputMessage" />
@@ -47,6 +59,14 @@
     <wsdl:operation name="getWordEnglish">
       <wsdl:input wsaw:Action="http://tempuri.org/IWordService/getWordEnglish" message="tns:IWordService_getWordEnglish_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWordService/getWordEnglishResponse" message="tns:IWordService_getWordEnglish_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getClueSpanish">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWordService/getClueSpanish" message="tns:IWordService_getClueSpanish_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWordService/getClueSpanishResponse" message="tns:IWordService_getClueSpanish_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getClueEnglish">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWordService/getClueEnglish" message="tns:IWordService_getClueEnglish_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWordService/getClueEnglishResponse" message="tns:IWordService_getClueEnglish_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IWordService" type="tns:IWordService">
@@ -80,6 +100,24 @@
     </wsdl:operation>
     <wsdl:operation name="getWordEnglish">
       <soap:operation soapAction="http://tempuri.org/IWordService/getWordEnglish" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClueSpanish">
+      <soap:operation soapAction="http://tempuri.org/IWordService/getClueSpanish" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getClueEnglish">
+      <soap:operation soapAction="http://tempuri.org/IWordService/getClueEnglish" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

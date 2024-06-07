@@ -47,7 +47,6 @@ namespace AhorcadoServicios.Model.DTO
             { 
                 throw ex; 
             }
-
         }
 
         public static string getWordEnglish(int wordID)
@@ -67,7 +66,42 @@ namespace AhorcadoServicios.Model.DTO
             {
                 throw ex;
             }
+        }
 
+        public static string getClueSpanish(int wordID)
+        {
+            try
+            {
+                var connection = ConnectionDB.getConnection();
+                connection.Open();
+                DataContext dataContext = new DataContext(connection);
+                var clue = (from clu in dataContext.GetTable<Word>()
+                            where clu.WordID == wordID
+                            select clu.SpanishClue).FirstOrDefault();
+                return clue;
+            }
+            catch (SqlException ex) 
+            {
+                throw ex; 
+            }
+        }
+
+        public static string getClueEnglish(int wordID)
+        {
+            try
+            {
+                var connection = ConnectionDB.getConnection();
+                connection.Open();
+                DataContext dataContext = new DataContext(connection);
+                var clue = (from clu in dataContext.GetTable<Word>()
+                            where clu.WordID == wordID
+                            select clu.EnglishClue).FirstOrDefault();
+                return clue;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
         }
     }
 }

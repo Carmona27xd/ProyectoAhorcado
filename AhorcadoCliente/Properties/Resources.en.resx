@@ -129,6 +129,9 @@
   <data name="CategoriesCreateMatch" xml:space="preserve">
     <value>Categories</value>
   </data>
+  <data name="ChallengerLeaveMatchMessage" xml:space="preserve">
+    <value>The challenger has left the game</value>
+  </data>
   <data name="CreateAccountButton" xml:space="preserve">
     <value>Create account</value>
   </data>
@@ -171,11 +174,20 @@
   <data name="GameLanguageLabel" xml:space="preserve">
     <value>Select the language of the word</value>
   </data>
+  <data name="GuestLeaveMatchMessage" xml:space="preserve">
+    <value>The guest left the game!</value>
+  </data>
   <data name="IncompleteLogginMessage" xml:space="preserve">
     <value>Please enter all the data!</value>
   </data>
   <data name="IntroButton" xml:space="preserve">
     <value>Enter</value>
+  </data>
+  <data name="JoinGameMessage" xml:space="preserve">
+    <value>You joined!</value>
+  </data>
+  <data name="JoinMatchErrorMessage" xml:space="preserve">
+    <value>Error when joining the game</value>
   </data>
   <data name="LeaveMatchButton" xml:space="preserve">
     <value>Leave match</value>
@@ -185,6 +197,18 @@
   </data>
   <data name="LogginMessage" xml:space="preserve">
     <value>Welcome to the game</value>
+  </data>
+  <data name="LosserMatchMessage" xml:space="preserve">
+    <value>You lose!</value>
+  </data>
+  <data name="MatchCreatedMessage" xml:space="preserve">
+    <value>Game created!</value>
+  </data>
+  <data name="MatchLeaveMessage" xml:space="preserve">
+    <value>You have abandoned the game</value>
+  </data>
+  <data name="MatchLeaveMessageError" xml:space="preserve">
+    <value>Error!</value>
   </data>
   <data name="NamesRegister" xml:space="preserve">
     <value>Names</value>
@@ -200,6 +224,9 @@
   </data>
   <data name="PasswordRegister" xml:space="preserve">
     <value>Passowor</value>
+  </data>
+  <data name="PlayerJoinedMessage" xml:space="preserve">
+    <value>Other player has joined!</value>
   </data>
   <data name="SecondNameRegister" xml:space="preserve">
     <value>Second name</value>
@@ -221,5 +248,14 @@
   </data>
   <data name="UserRegisterLabel" xml:space="preserve">
     <value>Don't have an account? create one!</value>
+  </data>
+  <data name="WaitGuestMessage" xml:space="preserve">
+    <value>Waiting for another player</value>
+  </data>
+  <data name="WinnerMatchMessageChallenger" xml:space="preserve">
+    <value>You win!</value>
+  </data>
+  <data name="WinnerMatchMessageGuest" xml:space="preserve">
+    <value>You win!</value>
   </data>
 </root>

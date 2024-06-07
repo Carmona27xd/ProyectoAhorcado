@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\App.xaml
-6-1381501975
+8202020628
 1-1726874498
-16439960007
+18-403785496
 15-472223226
-MainWindow.xaml;Pages\CreateMatch.xaml;Pages\InGame.xaml;Pages\Lobby.xaml;Pages\Loggin.xaml;Pages\UserRegister.xaml;
+MainWindow.xaml;Pages\ChallengerView.xaml;Pages\CreateMatch.xaml;Pages\InGame.xaml;Pages\Lobby.xaml;Pages\Loggin.xaml;Pages\UserRegister.xaml;Pages\WaitingGuest.xaml;
 
 False
 
