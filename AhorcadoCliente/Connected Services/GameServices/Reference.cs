@@ -245,10 +245,16 @@ namespace AhorcadoCliente.GameServices {
         System.Threading.Tasks.Task<AhorcadoCliente.GameServices.MatchGame> createMatchAsync(AhorcadoCliente.GameServices.MatchGame createMatch);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/getMatchList", ReplyAction="http://tempuri.org/IGameServices/getMatchListResponse")]
-        AhorcadoCliente.GameServices.MatchGame[] getMatchList();
+        AhorcadoCliente.GameServices.MatchGame[] getMatchList(int playerID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/getMatchList", ReplyAction="http://tempuri.org/IGameServices/getMatchListResponse")]
-        System.Threading.Tasks.Task<AhorcadoCliente.GameServices.MatchGame[]> getMatchListAsync();
+        System.Threading.Tasks.Task<AhorcadoCliente.GameServices.MatchGame[]> getMatchListAsync(int playerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/getMatchesPlayed", ReplyAction="http://tempuri.org/IGameServices/getMatchesPlayedResponse")]
+        AhorcadoCliente.GameServices.MatchGame[] getMatchesPlayed(int playerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/getMatchesPlayed", ReplyAction="http://tempuri.org/IGameServices/getMatchesPlayedResponse")]
+        System.Threading.Tasks.Task<AhorcadoCliente.GameServices.MatchGame[]> getMatchesPlayedAsync(int playerID);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/initMatchGame", ReplyAction="http://tempuri.org/IGameServices/initMatchGameResponse")]
         bool initMatchGame(int guestID, int matchID);
@@ -315,6 +321,12 @@ namespace AhorcadoCliente.GameServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/getRemainingAttempts", ReplyAction="http://tempuri.org/IGameServices/getRemainingAttemptsResponse")]
         System.Threading.Tasks.Task<int> getRemainingAttemptsAsync(int matchID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/updatePointsEarned", ReplyAction="http://tempuri.org/IGameServices/updatePointsEarnedResponse")]
+        void updatePointsEarned(int playerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/updatePointsEarned", ReplyAction="http://tempuri.org/IGameServices/updatePointsEarnedResponse")]
+        System.Threading.Tasks.Task updatePointsEarnedAsync(int playerID);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -352,12 +364,20 @@ namespace AhorcadoCliente.GameServices {
             return base.Channel.createMatchAsync(createMatch);
         }
         
-        public AhorcadoCliente.GameServices.MatchGame[] getMatchList() {
-            return base.Channel.getMatchList();
+        public AhorcadoCliente.GameServices.MatchGame[] getMatchList(int playerID) {
+            return base.Channel.getMatchList(playerID);
         }
         
-        public System.Threading.Tasks.Task<AhorcadoCliente.GameServices.MatchGame[]> getMatchListAsync() {
-            return base.Channel.getMatchListAsync();
+        public System.Threading.Tasks.Task<AhorcadoCliente.GameServices.MatchGame[]> getMatchListAsync(int playerID) {
+            return base.Channel.getMatchListAsync(playerID);
+        }
+        
+        public AhorcadoCliente.GameServices.MatchGame[] getMatchesPlayed(int playerID) {
+            return base.Channel.getMatchesPlayed(playerID);
+        }
+        
+        public System.Threading.Tasks.Task<AhorcadoCliente.GameServices.MatchGame[]> getMatchesPlayedAsync(int playerID) {
+            return base.Channel.getMatchesPlayedAsync(playerID);
         }
         
         public bool initMatchGame(int guestID, int matchID) {
@@ -446,6 +466,14 @@ namespace AhorcadoCliente.GameServices {
         
         public System.Threading.Tasks.Task<int> getRemainingAttemptsAsync(int matchID) {
             return base.Channel.getRemainingAttemptsAsync(matchID);
+        }
+        
+        public void updatePointsEarned(int playerID) {
+            base.Channel.updatePointsEarned(playerID);
+        }
+        
+        public System.Threading.Tasks.Task updatePointsEarnedAsync(int playerID) {
+            return base.Channel.updatePointsEarnedAsync(playerID);
         }
     }
 }

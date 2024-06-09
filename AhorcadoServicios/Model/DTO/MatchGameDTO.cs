@@ -27,7 +27,7 @@ namespace AhorcadoServicios.Model.DTO
             }
         }
 
-        public static List<MatchGame> getMatchesAvaliables()
+        public static List<MatchGame> getMatchesAvaliables(int playerID)
         {
             try
             {
@@ -35,13 +35,31 @@ namespace AhorcadoServicios.Model.DTO
                 connection.Open();
                 DataContext dataContext = new DataContext(connection);
                 var matches = (from mat in dataContext.GetTable<MatchGame>()
-                               where mat.StatusMatchID == 1
+                               where mat.StatusMatchID == 1 && mat.ChallengerID != playerID
                                select mat).ToList();
                 return matches;
             }
             catch (SqlException ex)
             {
                 throw ex;
+            }
+        }
+
+        public static List<MatchGame> getMatchesPlayed(int playerID)
+        {
+            try
+            {
+                var connection = ConnectionDB.getConnection();
+                connection.Open();
+                DataContext dataContext = new DataContext(connection);
+                var matches = (from mat in dataContext.GetTable<MatchGame>()
+                               where mat.StatusMatchID == 3 && mat.WinnerID == playerID
+                               select mat).ToList();
+                return matches;
+            }
+            catch (SqlException ex)
+            {
+                throw ex; 
             }
         }
 
@@ -286,7 +304,7 @@ namespace AhorcadoServicios.Model.DTO
         {
             try
             {
-                using ( var connection = ConnectionDB.getConnection())
+                using (var connection = ConnectionDB.getConnection())
                 {
                     connection.Open();
                     DataContext dataContext = new DataContext(connection);
@@ -299,6 +317,31 @@ namespace AhorcadoServicios.Model.DTO
             catch (SqlException ex)
             {
                 throw ex;
+            }
+        }
+
+        public static void updatePointsEarned(int playerID)
+        {
+            try
+            {
+                using (var connection = ConnectionDB.getConnection())
+                {
+                    connection.Open();
+                    DataContext dataContext = new DataContext(connection);
+                    var player = (from p in dataContext.GetTable<Player>()
+                                  where p.PlayerID == playerID
+                                  select p).FirstOrDefault();
+
+                    if (player != null)
+                    {
+                        player.PointsEarned += 10;
+                        dataContext.SubmitChanges();
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex; 
             }
         }
     }

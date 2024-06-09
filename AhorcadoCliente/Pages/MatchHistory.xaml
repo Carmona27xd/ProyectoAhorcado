@@ -1,0 +1,38 @@
+﻿<Page x:Class="AhorcadoCliente.Pages.MatchHistory"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AhorcadoCliente.Pages"
+      xmlns:p="clr-namespace:AhorcadoCliente.Properties"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Title="MatchHistory">
+
+    <Grid Background="Wheat">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="{x:Static p:Resources.MatchHistoryLabel}" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+
+        <DataGrid x:Name="HistoryDataGrid" AutoGenerateColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False" CanUserAddRows="False" CanUserSortColumns="False"
+                  IsReadOnly="True" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Row="1" Margin="50" CanUserResizeColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="{x:Static p:Resources.DataGridColumnChallengerDefeat}" Binding="{Binding NickNameChallenger}" Width="*" />
+                <DataGridTextColumn Header="{x:Static p:Resources.DataGridColumnDate}" Binding="{Binding DateMatch}" Width="*"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Grid Grid.Row="2" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="Volver" Width="130" Height="30" Margin="10,0" Grid.Column="0" Click="Back_Click"/>
+            <Button Content="Ver perfil" Width="130" Height="30" Margin="10,0" Grid.Column="1" Click="ViewProfile_Click"/>
+        </Grid>
+    </Grid>
+</Page>

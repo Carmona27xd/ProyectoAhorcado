@@ -18,13 +18,29 @@
   </xs:element>
   <xs:element name="getMatchList">
     <xs:complexType>
-      <xs:sequence />
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playerID" type="xs:int" />
+      </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="getMatchListResponse">
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/AhorcadoServicios.Model.POCO" minOccurs="0" name="getMatchListResult" nillable="true" type="q3:ArrayOfMatchGame" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMatchesPlayed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playerID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getMatchesPlayedResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/AhorcadoServicios.Model.POCO" minOccurs="0" name="getMatchesPlayedResult" nillable="true" type="q4:ArrayOfMatchGame" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -74,7 +90,7 @@
   <xs:element name="updateCharBD">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="letter" type="q4:char" />
+        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="letter" type="q5:char" />
         <xs:element minOccurs="0" name="matchID" type="xs:int" />
       </xs:sequence>
     </xs:complexType>
@@ -168,7 +184,7 @@
   <xs:element name="getGuestLetterResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q5="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="getGuestLetterResult" nillable="true" type="q5:char" />
+        <xs:element xmlns:q6="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="getGuestLetterResult" nillable="true" type="q6:char" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -184,6 +200,18 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="getRemainingAttemptsResult" type="xs:int" />
       </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updatePointsEarned">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="playerID" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="updatePointsEarnedResponse">
+    <xs:complexType>
+      <xs:sequence />
     </xs:complexType>
   </xs:element>
 </xs:schema>

@@ -1,8 +1,3 @@
-C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\bin\Debug\Music\Music.mp3
-C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\bin\Debug\AhorcadoCliente.exe.config
-C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\bin\Debug\AhorcadoCliente.exe
-C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\bin\Debug\AhorcadoCliente.pdb
-C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\bin\Debug\en\AhorcadoCliente.resources.dll
 C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\obj\Debug\AhorcadoCliente.csproj.AssemblyReference.cache
 C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\obj\Debug\MainWindow.g.cs
 C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\obj\Debug\Pages\ChallengerView.g.cs
@@ -16,6 +11,11 @@ C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\obj\Debug\App.g.cs
 C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\obj\Debug\AhorcadoCliente_Content.g.cs
 C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\obj\Debug\AhorcadoCliente_MarkupCompile.cache
 C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\obj\Debug\AhorcadoCliente_MarkupCompile.lref
+C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\bin\Debug\Music\Music.mp3
+C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\bin\Debug\AhorcadoCliente.exe.config
+C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\bin\Debug\AhorcadoCliente.exe
+C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\bin\Debug\AhorcadoCliente.pdb
+C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\bin\Debug\en\AhorcadoCliente.resources.dll
 C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\obj\Debug\MainWindow.baml
 C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\obj\Debug\Pages\ChallengerView.baml
 C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\obj\Debug\Pages\CreateMatch.baml
@@ -32,3 +32,5 @@ C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\obj\Debug\Ahorcado
 C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\obj\Debug\en\AhorcadoCliente.resources.dll
 C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\obj\Debug\AhorcadoCliente.exe
 C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\obj\Debug\AhorcadoCliente.pdb
+C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\obj\Debug\Pages\MatchHistory.g.cs
+C:\Users\Emmanuel\Desktop\ProyectoTecnologias\AhorcadoCliente\obj\Debug\Pages\MatchHistory.baml

@@ -50,7 +50,7 @@ namespace AhorcadoCliente.Pages
                 lbWaitingPlayer.Content = message;
                 btnLeaveMatch.IsEnabled = false;
                 DispatcherTimer delayTimer = new DispatcherTimer();
-                delayTimer.Interval = TimeSpan.FromSeconds(2); 
+                delayTimer.Interval = TimeSpan.FromSeconds(1); 
                 delayTimer.Tick += (sender, e) =>
                 {
                     delayTimer.Stop(); 

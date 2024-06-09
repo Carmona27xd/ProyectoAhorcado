@@ -61,6 +61,15 @@ namespace AhorcadoCliente.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Volver.
+        /// </summary>
+        public static string BackButton {
+            get {
+                return ResourceManager.GetString("BackButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Fecha de nacimiento.
         /// </summary>
         public static string BirthDateRegister {
@@ -75,6 +84,15 @@ namespace AhorcadoCliente.Properties {
         public static string CancelCreateMatchButton {
             get {
                 return ResourceManager.GetString("CancelCreateMatchButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Deseas cancelar la creacion de la partida? .
+        /// </summary>
+        public static string CancelCreateMatchMessage {
+            get {
+                return ResourceManager.GetString("CancelCreateMatchMessage", resourceCulture);
             }
         }
         
@@ -106,6 +124,15 @@ namespace AhorcadoCliente.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Confirmacion.
+        /// </summary>
+        public static string ConfirmationMessage {
+            get {
+                return ResourceManager.GetString("ConfirmationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Crear cuenta.
         /// </summary>
         public static string CreateAccountButton {
@@ -129,6 +156,15 @@ namespace AhorcadoCliente.Properties {
         public static string CreateMatchButton {
             get {
                 return ResourceManager.GetString("CreateMatchButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Jugador derrotado.
+        /// </summary>
+        public static string DataGridColumnChallengerDefeat {
+            get {
+                return ResourceManager.GetString("DataGridColumnChallengerDefeat", resourceCulture);
             }
         }
         
@@ -286,6 +322,15 @@ namespace AhorcadoCliente.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Deseas abandonar el juego? .
+        /// </summary>
+        public static string LeaveMatchConfirmation {
+            get {
+                return ResourceManager.GetString("LeaveMatchConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Partidas disponibles.
         /// </summary>
         public static string LobbyLabel {
@@ -304,6 +349,33 @@ namespace AhorcadoCliente.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Cerrar sesion.
+        /// </summary>
+        public static string LogOutButton {
+            get {
+                return ResourceManager.GetString("LogOutButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Deseas salir del juego? .
+        /// </summary>
+        public static string LogOutMessage {
+            get {
+                return ResourceManager.GetString("LogOutMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a El invitado adivino la palabra, perdiste!.
+        /// </summary>
+        public static string LosserChallengerMessage {
+            get {
+                return ResourceManager.GetString("LosserChallengerMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Perdiste!.
         /// </summary>
         public static string LosserMatchMessage {
@@ -318,6 +390,24 @@ namespace AhorcadoCliente.Properties {
         public static string MatchCreatedMessage {
             get {
                 return ResourceManager.GetString("MatchCreatedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Historial de partidas.
+        /// </summary>
+        public static string MatchHistoryButton {
+            get {
+                return ResourceManager.GetString("MatchHistoryButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Historial de partidas.
+        /// </summary>
+        public static string MatchHistoryLabel {
+            get {
+                return ResourceManager.GetString("MatchHistoryLabel", resourceCulture);
             }
         }
         

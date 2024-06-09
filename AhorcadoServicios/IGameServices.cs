@@ -15,7 +15,9 @@ namespace AhorcadoServicios
         [OperationContract]
         MatchGame createMatch(MatchGame createMatch);
         [OperationContract]
-        List<MatchGame> getMatchList();
+        List<MatchGame> getMatchList(int playerID);
+        [OperationContract]
+        List<MatchGame> getMatchesPlayed(int playerID);
         [OperationContract]
         bool initMatchGame(int guestID, int matchID);
         [OperationContract]
@@ -38,6 +40,7 @@ namespace AhorcadoServicios
         char? getGuestLetter(int matchID);
         [OperationContract]
         int getRemainingAttempts(int matchID);
-
+        [OperationContract]
+        void updatePointsEarned(int playerID);
     }
 }

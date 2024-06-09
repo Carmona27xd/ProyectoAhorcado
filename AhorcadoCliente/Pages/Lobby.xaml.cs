@@ -55,7 +55,8 @@ namespace AhorcadoCliente.Pages
         {
             try
             {
-                MatchGame[] aux = await gameServicesClient.getMatchListAsync();
+                Player player = SessionManager.Instance.LoggedInPlayer;
+                MatchGame[] aux = await gameServicesClient.getMatchListAsync(player.PlayerID);
                 matchesAvaliables = aux.ToList();
                 if (matchesAvaliables.Count > 0)
                 {
@@ -81,6 +82,23 @@ namespace AhorcadoCliente.Pages
         private void CreateMatch_Click(object sender, RoutedEventArgs e)
         {
             NavigationService.Navigate(new CreateMatch());
+        }
+
+        private void LogOut_CLick(object sender, RoutedEventArgs e)
+        {
+            string message = Properties.Resources.LogOutMessage;
+            string messageConfirm = Properties.Resources.ConfirmationMessage;
+            MessageBoxResult result = MessageBox.Show(message, messageConfirm, MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                NavigationService.Navigate(new Loggin(Application.Current.MainWindow as MainWindow));
+            }
+        }
+
+        private void MatchHistoryButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.Navigate(new MatchHistory());
         }
     }
 }

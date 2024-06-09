@@ -196,6 +196,7 @@ namespace AhorcadoCliente.Pages
                         Player player = SessionManager.Instance.LoggedInPlayer;
                         gameServicesClient.updateWinner(player.PlayerID, matchGame.MatchID);
                         gameServicesClient.finishMatch(matchGame.MatchID);
+                        gameServicesClient.updatePointsEarned(player.PlayerID);
                         string message = Properties.Resources.WinnerMatchMessageGuest;
                         MessageBox.Show(message);
                         NavigationService.Navigate(new Lobby());
@@ -213,6 +214,7 @@ namespace AhorcadoCliente.Pages
                         string message = Properties.Resources.LosserMatchMessage;
                         MessageBox.Show(message);
                         gameServicesClient.updateWinner(matchGame.ChallengerID, matchGame.MatchID);
+                        gameServicesClient.updatePointsEarned(matchGame.ChallengerID);
                         gameServicesClient.finishMatch(matchGame.MatchID);
                         NavigationService.Navigate(new Lobby());
                     }

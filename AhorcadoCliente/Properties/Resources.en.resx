@@ -117,11 +117,17 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="BackButton" xml:space="preserve">
+    <value>Return</value>
+  </data>
   <data name="BirthDateRegister" xml:space="preserve">
     <value>Birth date</value>
   </data>
   <data name="CancelCreateMatchButton" xml:space="preserve">
     <value>Cancel</value>
+  </data>
+  <data name="CancelCreateMatchMessage" xml:space="preserve">
+    <value>Do you want to cancel the creation of the game?</value>
   </data>
   <data name="CancelRegisterButton" xml:space="preserve">
     <value>Cancel</value>
@@ -132,6 +138,9 @@
   <data name="ChallengerLeaveMatchMessage" xml:space="preserve">
     <value>The challenger has left the game</value>
   </data>
+  <data name="ConfirmationMessage" xml:space="preserve">
+    <value>Confirmation</value>
+  </data>
   <data name="CreateAccountButton" xml:space="preserve">
     <value>Create account</value>
   </data>
@@ -140,6 +149,9 @@
   </data>
   <data name="CreateMatchButton" xml:space="preserve">
     <value>Create match</value>
+  </data>
+  <data name="DataGridColumnChallengerDefeat" xml:space="preserve">
+    <value>Defeated player</value>
   </data>
   <data name="DataGridColumnDate" xml:space="preserve">
     <value>Date of match</value>
@@ -192,17 +204,35 @@
   <data name="LeaveMatchButton" xml:space="preserve">
     <value>Leave match</value>
   </data>
+  <data name="LeaveMatchConfirmation" xml:space="preserve">
+    <value>Do you want to leave the game?</value>
+  </data>
   <data name="LobbyLabel" xml:space="preserve">
     <value>Available games</value>
   </data>
   <data name="LogginMessage" xml:space="preserve">
     <value>Welcome to the game</value>
   </data>
+  <data name="LogOutButton" xml:space="preserve">
+    <value>Log out</value>
+  </data>
+  <data name="LogOutMessage" xml:space="preserve">
+    <value>Do you want to exit the game?</value>
+  </data>
+  <data name="LosserChallengerMessage" xml:space="preserve">
+    <value>Guest guessed the word, you lost!</value>
+  </data>
   <data name="LosserMatchMessage" xml:space="preserve">
     <value>You lose!</value>
   </data>
   <data name="MatchCreatedMessage" xml:space="preserve">
     <value>Game created!</value>
+  </data>
+  <data name="MatchHistoryButton" xml:space="preserve">
+    <value>Match history</value>
+  </data>
+  <data name="MatchHistoryLabel" xml:space="preserve">
+    <value>Match history</value>
   </data>
   <data name="MatchLeaveMessage" xml:space="preserve">
     <value>You have abandoned the game</value>

@@ -124,7 +124,14 @@ namespace AhorcadoCliente.Pages
 
         private void cancelMatchCreation()
         {
-            NavigationService.Navigate(new Lobby());
+            string message = Properties.Resources.CancelCreateMatchMessage;
+            string messageConfirm = Properties.Resources.ConfirmationMessage;
+            MessageBoxResult result = MessageBox.Show(message, messageConfirm, MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                NavigationService.Navigate(new Lobby());
+            }
         }
         private MatchGame createNewMatch()
         {

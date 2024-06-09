@@ -19,6 +19,12 @@
   <wsdl:message name="IGameServices_getMatchList_OutputMessage">
     <wsdl:part name="parameters" element="tns:getMatchListResponse" />
   </wsdl:message>
+  <wsdl:message name="IGameServices_getMatchesPlayed_InputMessage">
+    <wsdl:part name="parameters" element="tns:getMatchesPlayed" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_getMatchesPlayed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getMatchesPlayedResponse" />
+  </wsdl:message>
   <wsdl:message name="IGameServices_initMatchGame_InputMessage">
     <wsdl:part name="parameters" element="tns:initMatchGame" />
   </wsdl:message>
@@ -85,6 +91,12 @@
   <wsdl:message name="IGameServices_getRemainingAttempts_OutputMessage">
     <wsdl:part name="parameters" element="tns:getRemainingAttemptsResponse" />
   </wsdl:message>
+  <wsdl:message name="IGameServices_updatePointsEarned_InputMessage">
+    <wsdl:part name="parameters" element="tns:updatePointsEarned" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_updatePointsEarned_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updatePointsEarnedResponse" />
+  </wsdl:message>
   <wsdl:portType name="IGameServices">
     <wsdl:operation name="createMatch">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/createMatch" message="tns:IGameServices_createMatch_InputMessage" />
@@ -93,6 +105,10 @@
     <wsdl:operation name="getMatchList">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/getMatchList" message="tns:IGameServices_getMatchList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGameServices/getMatchListResponse" message="tns:IGameServices_getMatchList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getMatchesPlayed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/getMatchesPlayed" message="tns:IGameServices_getMatchesPlayed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameServices/getMatchesPlayedResponse" message="tns:IGameServices_getMatchesPlayed_OutputMessage" />
     </wsdl:operation>
     <wsdl:operation name="initMatchGame">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/initMatchGame" message="tns:IGameServices_initMatchGame_InputMessage" />
@@ -138,6 +154,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/getRemainingAttempts" message="tns:IGameServices_getRemainingAttempts_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGameServices/getRemainingAttemptsResponse" message="tns:IGameServices_getRemainingAttempts_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="updatePointsEarned">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/updatePointsEarned" message="tns:IGameServices_updatePointsEarned_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameServices/updatePointsEarnedResponse" message="tns:IGameServices_updatePointsEarned_OutputMessage" />
+    </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IGameServices" type="tns:IGameServices">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -152,6 +172,15 @@
     </wsdl:operation>
     <wsdl:operation name="getMatchList">
       <soap:operation soapAction="http://tempuri.org/IGameServices/getMatchList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getMatchesPlayed">
+      <soap:operation soapAction="http://tempuri.org/IGameServices/getMatchesPlayed" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -251,6 +280,15 @@
     </wsdl:operation>
     <wsdl:operation name="getRemainingAttempts">
       <soap:operation soapAction="http://tempuri.org/IGameServices/getRemainingAttempts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updatePointsEarned">
+      <soap:operation soapAction="http://tempuri.org/IGameServices/updatePointsEarned" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

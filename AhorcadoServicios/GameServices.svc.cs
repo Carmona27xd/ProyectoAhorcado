@@ -33,9 +33,14 @@ namespace AhorcadoServicios
             return MatchGameDTO.getGuestNickName(playerID);
         }
 
-        public List<MatchGame> getMatchList()
+        public List<MatchGame> getMatchList(int playerID)
         {
-            return MatchGameDTO.getMatchesAvaliables();
+            return MatchGameDTO.getMatchesAvaliables(playerID);
+        }
+
+        public List<MatchGame> getMatchesPlayed(int playerID)
+        {
+            return MatchGameDTO.getMatchesPlayed(playerID);
         }
 
         public int getMatchStatus(int matchID)
@@ -66,6 +71,11 @@ namespace AhorcadoServicios
         public bool updateCharBD(char letter, int matchID)
         {
             return MatchGameDTO.updateCharBD(letter, matchID);
+        }
+
+        public void updatePointsEarned(int playerID)
+        {
+            MatchGameDTO.updatePointsEarned(playerID);
         }
 
         public bool updateRemainingAttempts(int remainingAttempts, int matchID)

@@ -85,6 +85,7 @@ namespace AhorcadoCliente.Pages
             {
                 gameServicesClient.finishMatch(matchGame.MatchID);
                 string message = Properties.Resources.WinnerMatchMessageChallenger;
+                dispatcherTimer.Stop();
                 MessageBox.Show(message);
                 NavigationService.Navigate(new Lobby());
             }
@@ -206,8 +207,9 @@ namespace AhorcadoCliente.Pages
 
         private void LeaveMatch_Click(object sender, RoutedEventArgs e)
         {
-
-            MessageBoxResult result = MessageBox.Show("Deseas abandonar la partida?", "Confirmación", MessageBoxButton.YesNo, MessageBoxImage.Question);
+            string message = Properties.Resources.LeaveMatchConfirmation;
+            string confirmation = Properties.Resources.ConfirmationMessage;
+            MessageBoxResult result = MessageBox.Show(message, confirmation, MessageBoxButton.YesNo, MessageBoxImage.Question);
 
             if (result == MessageBoxResult.Yes)
             {
@@ -249,8 +251,25 @@ namespace AhorcadoCliente.Pages
             {
                 string message = Properties.Resources.ChallengerLeaveMatchMessage;
                 MessageBox.Show(message);
-                NavigationService.Navigate(new Lobby());
                 dispatcherTimer.Stop();
+                NavigationService.Navigate(new Lobby());
+            }
+            
+            if (matchStatus == 3)
+            {
+                dispatcherTimer.Stop();
+
+                DispatcherTimer delayTimer = new DispatcherTimer();
+                delayTimer.Interval = TimeSpan.FromSeconds(1);
+                delayTimer.Tick += (sender, e) =>
+                {
+                    delayTimer.Stop();
+                    string messagge = Properties.Resources.LosserChallengerMessage;
+                    MessageBox.Show(messagge);
+                    NavigationService.Navigate(new Lobby());
+                };
+                delayTimer.Start();
+
             }
         }
     }
