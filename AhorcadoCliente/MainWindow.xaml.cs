@@ -33,13 +33,13 @@ namespace AhorcadoCliente
 
         private void goToLoggin()
         {
-            this.frame.Navigate(new Loggin(this));
+            this.frame.Navigate(new LogIn(this));
         }
 
         public void changeLanguage(string cultureCode)
         {
             System.Threading.Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(cultureCode);
-            this.frame.Navigate(new Loggin(this));
+            this.frame.Navigate(new LogIn(this));
         }
 
         private void playBackGroundMusic()

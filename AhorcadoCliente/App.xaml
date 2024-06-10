@@ -4,6 +4,11 @@
              xmlns:local="clr-namespace:AhorcadoCliente"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/TextBoxStyle.xaml"></ResourceDictionary>
+                <ResourceDictionary Source="Themes/PasswordBoxStyle.xaml"></ResourceDictionary>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
