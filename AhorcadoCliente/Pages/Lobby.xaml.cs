@@ -92,7 +92,7 @@ namespace AhorcadoCliente.Pages
 
             if (result == MessageBoxResult.Yes)
             {
-                NavigationService.Navigate(new Loggin(Application.Current.MainWindow as MainWindow));
+                NavigationService.Navigate(new LogIn(Application.Current.MainWindow as MainWindow));
             }
         }
 

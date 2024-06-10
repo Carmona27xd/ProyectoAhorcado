@@ -180,6 +180,9 @@
   <data name="ErrorLogginMessage" xml:space="preserve">
     <value>Contrasena y/o email incorrectos!</value>
   </data>
+  <data name="ExitGameButton" xml:space="preserve">
+    <value>Salir</value>
+  </data>
   <data name="FirstNameRegister" xml:space="preserve">
     <value>Apellido paterno</value>
   </data>
@@ -188,6 +191,9 @@
   </data>
   <data name="GuestLeaveMatchMessage" xml:space="preserve">
     <value>El invitado dejo el juego!</value>
+  </data>
+  <data name="HangmanTittle" xml:space="preserve">
+    <value>Ahorcado</value>
   </data>
   <data name="IncompleteLogginMessage" xml:space="preserve">
     <value>Por favor ingresa todos los datos!</value>
@@ -212,6 +218,9 @@
   </data>
   <data name="LogginMessage" xml:space="preserve">
     <value>Bienvenido al juego</value>
+  </data>
+  <data name="LoginLabel" xml:space="preserve">
+    <value>Inicia Sesión</value>
   </data>
   <data name="LogOutButton" xml:space="preserve">
     <value>Cerrar sesion</value>

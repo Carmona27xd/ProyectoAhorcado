@@ -19,12 +19,12 @@ namespace AhorcadoCliente.Pages
     /// <summary>
     /// Lógica de interacción para Loggin.xaml
     /// </summary>
-    public partial class Loggin : Page
+    public partial class LogIn : Page
     {
         UserServicesClient userServices = new UserServicesClient();
         private MainWindow mainWindow;
 
-        public Loggin(MainWindow mainWindow)
+        public LogIn(MainWindow mainWindow)
         {
             InitializeComponent();
             this.mainWindow = mainWindow;
@@ -107,6 +107,11 @@ namespace AhorcadoCliente.Pages
 
             return true;
 
+        }
+
+        private void exit_Click(object sender, RoutedEventArgs e)
+        {
+            mainWindow.Close();
         }
     }
 }

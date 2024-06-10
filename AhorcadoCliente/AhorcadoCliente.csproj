@@ -119,7 +119,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\Loggin.xaml">
+    <Page Include="Pages\LogIn.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -135,10 +135,18 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\PasswordBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\TextBoxStyle.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Pages\Loggin.xaml.cs">
-      <DependentUpon>Loggin.xaml</DependentUpon>
+    <Compile Include="Pages\LogIn.xaml.cs">
+      <DependentUpon>LogIn.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\UserRegister.xaml.cs">
       <DependentUpon>UserRegister.xaml</DependentUpon>
@@ -211,6 +219,7 @@
     <None Include="Connected Services\WordServices\WordService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Resource Include="Font\Monocraft.ttf" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -252,6 +261,9 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Resource Include="Images\PlayerIcon.png" />
+    <Resource Include="Images\hololive-icon.png" />
+    <Resource Include="Images\hangman-icon.png" />
+    <Resource Include="Images\skull-icon.png" />
     <Content Include="Music\Music.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
