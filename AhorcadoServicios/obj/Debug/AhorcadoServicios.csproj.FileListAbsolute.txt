@@ -12,3 +12,10 @@ C:\Users\wero1\Source\Repos\Carmona27xd\ProyectoAhorcado\AhorcadoServicios\obj\D
 C:\Users\wero1\Source\Repos\Carmona27xd\ProyectoAhorcado\AhorcadoServicios\obj\Debug\AhorcadoServicios.csproj.CoreCompileInputs.cache
 C:\Users\wero1\Source\Repos\Carmona27xd\ProyectoAhorcado\AhorcadoServicios\obj\Debug\AhorcadoServicios.dll
 C:\Users\wero1\Source\Repos\Carmona27xd\ProyectoAhorcado\AhorcadoServicios\obj\Debug\AhorcadoServicios.pdb
+C:\Users\Emmanuel\Documents\Cardone\AhorcadoServicios\bin\AhorcadoServicios.dll.config
+C:\Users\Emmanuel\Documents\Cardone\AhorcadoServicios\bin\AhorcadoServicios.dll
+C:\Users\Emmanuel\Documents\Cardone\AhorcadoServicios\bin\AhorcadoServicios.pdb
+C:\Users\Emmanuel\Documents\Cardone\AhorcadoServicios\obj\Debug\AhorcadoServicios.csproj.AssemblyReference.cache
+C:\Users\Emmanuel\Documents\Cardone\AhorcadoServicios\obj\Debug\AhorcadoServicios.csproj.CoreCompileInputs.cache
+C:\Users\Emmanuel\Documents\Cardone\AhorcadoServicios\obj\Debug\AhorcadoServicios.dll
+C:\Users\Emmanuel\Documents\Cardone\AhorcadoServicios\obj\Debug\AhorcadoServicios.pdb

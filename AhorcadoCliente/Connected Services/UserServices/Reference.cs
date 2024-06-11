@@ -211,6 +211,30 @@ namespace AhorcadoCliente.UserServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserServices/logIn", ReplyAction="http://tempuri.org/IUserServices/logInResponse")]
         System.Threading.Tasks.Task<AhorcadoCliente.UserServices.Player> logInAsync(string email, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserServices/registerUser", ReplyAction="http://tempuri.org/IUserServices/registerUserResponse")]
+        bool registerUser(AhorcadoCliente.UserServices.Player newPlayer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserServices/registerUser", ReplyAction="http://tempuri.org/IUserServices/registerUserResponse")]
+        System.Threading.Tasks.Task<bool> registerUserAsync(AhorcadoCliente.UserServices.Player newPlayer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserServices/emailAlreadyRegistered", ReplyAction="http://tempuri.org/IUserServices/emailAlreadyRegisteredResponse")]
+        bool emailAlreadyRegistered(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserServices/emailAlreadyRegistered", ReplyAction="http://tempuri.org/IUserServices/emailAlreadyRegisteredResponse")]
+        System.Threading.Tasks.Task<bool> emailAlreadyRegisteredAsync(string email);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserServices/nicknameAlreadyRegistered", ReplyAction="http://tempuri.org/IUserServices/nicknameAlreadyRegisteredResponse")]
+        bool nicknameAlreadyRegistered(string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserServices/nicknameAlreadyRegistered", ReplyAction="http://tempuri.org/IUserServices/nicknameAlreadyRegisteredResponse")]
+        System.Threading.Tasks.Task<bool> nicknameAlreadyRegisteredAsync(string nickname);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserServices/telephoneAlreadyExist", ReplyAction="http://tempuri.org/IUserServices/telephoneAlreadyExistResponse")]
+        bool telephoneAlreadyExist(string telephone);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserServices/telephoneAlreadyExist", ReplyAction="http://tempuri.org/IUserServices/telephoneAlreadyExistResponse")]
+        System.Threading.Tasks.Task<bool> telephoneAlreadyExistAsync(string telephone);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -246,6 +270,38 @@ namespace AhorcadoCliente.UserServices {
         
         public System.Threading.Tasks.Task<AhorcadoCliente.UserServices.Player> logInAsync(string email, string password) {
             return base.Channel.logInAsync(email, password);
+        }
+        
+        public bool registerUser(AhorcadoCliente.UserServices.Player newPlayer) {
+            return base.Channel.registerUser(newPlayer);
+        }
+        
+        public System.Threading.Tasks.Task<bool> registerUserAsync(AhorcadoCliente.UserServices.Player newPlayer) {
+            return base.Channel.registerUserAsync(newPlayer);
+        }
+        
+        public bool emailAlreadyRegistered(string email) {
+            return base.Channel.emailAlreadyRegistered(email);
+        }
+        
+        public System.Threading.Tasks.Task<bool> emailAlreadyRegisteredAsync(string email) {
+            return base.Channel.emailAlreadyRegisteredAsync(email);
+        }
+        
+        public bool nicknameAlreadyRegistered(string nickname) {
+            return base.Channel.nicknameAlreadyRegistered(nickname);
+        }
+        
+        public System.Threading.Tasks.Task<bool> nicknameAlreadyRegisteredAsync(string nickname) {
+            return base.Channel.nicknameAlreadyRegisteredAsync(nickname);
+        }
+        
+        public bool telephoneAlreadyExist(string telephone) {
+            return base.Channel.telephoneAlreadyExist(telephone);
+        }
+        
+        public System.Threading.Tasks.Task<bool> telephoneAlreadyExistAsync(string telephone) {
+            return base.Channel.telephoneAlreadyExistAsync(telephone);
         }
     }
 }

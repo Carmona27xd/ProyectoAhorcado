@@ -27,7 +27,16 @@ namespace AhorcadoCliente.Pages
         public MatchHistory()
         {
             InitializeComponent();
+            showEarnedPoints();
             getMatchesPlayed();
+        }
+
+        private void showEarnedPoints()
+        {
+            int playerPointsEarned = SessionManager.Instance.LoggedInPlayer.PointsEarned;
+            string pointsEarned = playerPointsEarned.ToString();
+            string label = Properties.Resources.LabelPointsEarned + " " + pointsEarned;
+            labelPointsEarned.Content = label;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)

@@ -13,16 +13,92 @@
   <wsdl:message name="IUserServices_logIn_OutputMessage">
     <wsdl:part name="parameters" element="tns:logInResponse" />
   </wsdl:message>
+  <wsdl:message name="IUserServices_registerUser_InputMessage">
+    <wsdl:part name="parameters" element="tns:registerUser" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_registerUser_OutputMessage">
+    <wsdl:part name="parameters" element="tns:registerUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_emailAlreadyRegistered_InputMessage">
+    <wsdl:part name="parameters" element="tns:emailAlreadyRegistered" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_emailAlreadyRegistered_OutputMessage">
+    <wsdl:part name="parameters" element="tns:emailAlreadyRegisteredResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_nicknameAlreadyRegistered_InputMessage">
+    <wsdl:part name="parameters" element="tns:nicknameAlreadyRegistered" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_nicknameAlreadyRegistered_OutputMessage">
+    <wsdl:part name="parameters" element="tns:nicknameAlreadyRegisteredResponse" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_telephoneAlreadyExist_InputMessage">
+    <wsdl:part name="parameters" element="tns:telephoneAlreadyExist" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_telephoneAlreadyExist_OutputMessage">
+    <wsdl:part name="parameters" element="tns:telephoneAlreadyExistResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUserServices">
     <wsdl:operation name="logIn">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserServices/logIn" message="tns:IUserServices_logIn_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserServices/logInResponse" message="tns:IUserServices_logIn_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="registerUser">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServices/registerUser" message="tns:IUserServices_registerUser_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServices/registerUserResponse" message="tns:IUserServices_registerUser_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="emailAlreadyRegistered">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServices/emailAlreadyRegistered" message="tns:IUserServices_emailAlreadyRegistered_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServices/emailAlreadyRegisteredResponse" message="tns:IUserServices_emailAlreadyRegistered_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="nicknameAlreadyRegistered">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServices/nicknameAlreadyRegistered" message="tns:IUserServices_nicknameAlreadyRegistered_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServices/nicknameAlreadyRegisteredResponse" message="tns:IUserServices_nicknameAlreadyRegistered_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="telephoneAlreadyExist">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServices/telephoneAlreadyExist" message="tns:IUserServices_telephoneAlreadyExist_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServices/telephoneAlreadyExistResponse" message="tns:IUserServices_telephoneAlreadyExist_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IUserServices" type="tns:IUserServices">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="logIn">
       <soap:operation soapAction="http://tempuri.org/IUserServices/logIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="registerUser">
+      <soap:operation soapAction="http://tempuri.org/IUserServices/registerUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="emailAlreadyRegistered">
+      <soap:operation soapAction="http://tempuri.org/IUserServices/emailAlreadyRegistered" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="nicknameAlreadyRegistered">
+      <soap:operation soapAction="http://tempuri.org/IUserServices/nicknameAlreadyRegistered" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="telephoneAlreadyExist">
+      <soap:operation soapAction="http://tempuri.org/IUserServices/telephoneAlreadyExist" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

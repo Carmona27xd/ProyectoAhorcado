@@ -141,6 +141,9 @@
   <data name="ConfirmationMessage" xml:space="preserve">
     <value>Confirmacion</value>
   </data>
+  <data name="ConfirmationUserRegister" xml:space="preserve">
+    <value>Se ha registrado en el juego!</value>
+  </data>
   <data name="CreateAccountButton" xml:space="preserve">
     <value>Crear cuenta</value>
   </data>
@@ -165,8 +168,14 @@
   <data name="DataGridColumnNickName" xml:space="preserve">
     <value>NickName</value>
   </data>
+  <data name="EmailAlreadyRegistered" xml:space="preserve">
+    <value>El correo ya se encuentra registrado</value>
+  </data>
   <data name="EmailLoggin" xml:space="preserve">
     <value>Correo</value>
+  </data>
+  <data name="EmailNotValid" xml:space="preserve">
+    <value>Por favor ingresa un correo valido</value>
   </data>
   <data name="EmailRegister" xml:space="preserve">
     <value>Correo</value>
@@ -179,6 +188,9 @@
   </data>
   <data name="ErrorLogginMessage" xml:space="preserve">
     <value>Contrasena y/o email incorrectos!</value>
+  </data>
+  <data name="ErrorUserRegister" xml:space="preserve">
+    <value>Error! no se pudo registrar el usuario</value>
   </data>
   <data name="ExitGameButton" xml:space="preserve">
     <value>Salir</value>
@@ -206,6 +218,36 @@
   </data>
   <data name="JoinMatchErrorMessage" xml:space="preserve">
     <value>Error al unirse a la partida</value>
+  </data>
+  <data name="LabelBirthDateEmpty" xml:space="preserve">
+    <value>Por favor selecciona la fecha de tu nacimiento</value>
+  </data>
+  <data name="LabelEmailEmpty" xml:space="preserve">
+    <value>Por favor ingresa tu correo electronico</value>
+  </data>
+  <data name="LabelFirstSurnameEmpty" xml:space="preserve">
+    <value>Por favor ingresa tus apellido paterno</value>
+  </data>
+  <data name="LabelNamesEmpty" xml:space="preserve">
+    <value>Por favor ingresa tus nombres</value>
+  </data>
+  <data name="LabelNickEmpty" xml:space="preserve">
+    <value>Por favor ingresa tu nickname</value>
+  </data>
+  <data name="LabelPasswordEmpty" xml:space="preserve">
+    <value>Por favor ingresa tu contraseña</value>
+  </data>
+  <data name="LabelPaswwordConfirmationEmpty" xml:space="preserve">
+    <value>Por favor vuelve a ingresa tu contraseña</value>
+  </data>
+  <data name="LabelPointsEarned" xml:space="preserve">
+    <value>Puntos obtenidos: </value>
+  </data>
+  <data name="LabelSecondSurnameEmpty" xml:space="preserve">
+    <value>Por favor ingresa tu apellido materno</value>
+  </data>
+  <data name="LabelTelephoneEmpty" xml:space="preserve">
+    <value>Por favor ingresa tu numero de telefono </value>
   </data>
   <data name="LeaveMatchButton" xml:space="preserve">
     <value>Abandonar partida</value>
@@ -249,8 +291,17 @@
   <data name="MatchLeaveMessageError" xml:space="preserve">
     <value>Error al abandonar la partida</value>
   </data>
+  <data name="NamesNotValid" xml:space="preserve">
+    <value>Por favor comprueba tu nombre o apellidos</value>
+  </data>
   <data name="NamesRegister" xml:space="preserve">
     <value>Nombres</value>
+  </data>
+  <data name="NicknameAlreadyRegistered" xml:space="preserve">
+    <value>El nickname ya se encuentra registrado</value>
+  </data>
+  <data name="NicknameNotValid" xml:space="preserve">
+    <value>Por favor ingresa un nickname valido, solo puede contener letras y numeros</value>
   </data>
   <data name="NickNameRegister" xml:space="preserve">
     <value>Nickname</value>
@@ -258,14 +309,29 @@
   <data name="PasswordConfirmationRegister" xml:space="preserve">
     <value>Confirmar contrasena</value>
   </data>
+  <data name="PasswordDoesntMatch" xml:space="preserve">
+    <value>Las contraseñas no coinciden!</value>
+  </data>
   <data name="PasswordLoggin" xml:space="preserve">
-    <value>Contrasena</value>
+    <value>Contraseña</value>
+  </data>
+  <data name="PasswordNotValid" xml:space="preserve">
+    <value>La contraseña debe de tener entre 8 y 15 caracteres y solo puede contener letras y numeros</value>
   </data>
   <data name="PasswordRegister" xml:space="preserve">
-    <value>Contrasena</value>
+    <value>Contraseña</value>
+  </data>
+  <data name="PhoneNotValid" xml:space="preserve">
+    <value>Por favor ingresa un telefono valido</value>
+  </data>
+  <data name="PhoneNumberRegister" xml:space="preserve">
+    <value>Numero de telefono</value>
   </data>
   <data name="PlayerJoinedMessage" xml:space="preserve">
     <value>Otro jugador se ha unido!</value>
+  </data>
+  <data name="RegisterButton" xml:space="preserve">
+    <value>Registrarse</value>
   </data>
   <data name="SecondNameRegister" xml:space="preserve">
     <value>Apellido materno</value>
@@ -278,6 +344,9 @@
   </data>
   <data name="SpanishComboItem" xml:space="preserve">
     <value>Espanol</value>
+  </data>
+  <data name="TelephoneAlreadyRegistered" xml:space="preserve">
+    <value>El telefono ya se encuentra registrado</value>
   </data>
   <data name="TelephoneRegister" xml:space="preserve">
     <value>Telefono</value>
@@ -293,6 +362,9 @@
   </data>
   <data name="WaitGuestMessage" xml:space="preserve">
     <value>Esperando a otro jugador</value>
+  </data>
+  <data name="WarningCreateMatch" xml:space="preserve">
+    <value>Por favor selecciona la categoria y la palabra!</value>
   </data>
   <data name="WinnerMatchMessageChallenger" xml:space="preserve">
     <value>El invitado no adivino la palabra, ganaste!</value>
