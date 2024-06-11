@@ -14,6 +14,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace AhorcadoCliente.Pages
 {
@@ -24,10 +25,25 @@ namespace AhorcadoCliente.Pages
     {
         List<MatchGame> matchesAvaliables;
         GameServicesClient gameServicesClient = new GameServicesClient();
+        private DispatcherTimer dispatcherTimer;
         public Lobby()
         {
             InitializeComponent();
             LoadUserDetails();
+            SetupTimer();
+            getAvaliableMatches();
+        }
+
+        private void SetupTimer()
+        {
+            dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Interval = TimeSpan.FromSeconds(1);
+            dispatcherTimer.Tick += DispatcherTimer_Tick;
+            dispatcherTimer.Start();
+        }
+
+        private void DispatcherTimer_Tick(object sender, EventArgs e)
+        {
             getAvaliableMatches();
         }
 
@@ -41,6 +57,7 @@ namespace AhorcadoCliente.Pages
                     gameServicesClient.initMatchGame(user.PlayerID, selectedMatch.MatchID);
                     string message = Properties.Resources.JoinGameMessage;
                     MessageBox.Show(message);
+                    dispatcherTimer.Stop();
                     NavigationService.Navigate(new InGame(selectedMatch));
                 }
                 catch (Exception ex)
@@ -92,17 +109,20 @@ namespace AhorcadoCliente.Pages
 
             if (result == MessageBoxResult.Yes)
             {
+                dispatcherTimer.Stop();
                 NavigationService.Navigate(new LogIn(Application.Current.MainWindow as MainWindow));
             }
         }
 
         private void MatchHistoryButton_Click(object sender, RoutedEventArgs e)
         {
+            dispatcherTimer.Stop();
             NavigationService.Navigate(new MatchHistory());
         }
 
         private void ViewProfile_Click(object sender, RoutedEventArgs e)
         {
+            dispatcherTimer.Stop();
             //NavigationService.Navigate(new Profile());
         }
     }

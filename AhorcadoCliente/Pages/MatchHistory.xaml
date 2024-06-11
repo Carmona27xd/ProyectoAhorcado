@@ -19,7 +19,7 @@
         <Label Content="{x:Static p:Resources.MatchHistoryLabel}" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
 
         <DataGrid x:Name="HistoryDataGrid" AutoGenerateColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False" CanUserAddRows="False" CanUserSortColumns="False"
-                  IsReadOnly="True" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Row="1" Margin="50" CanUserResizeColumns="False">
+                  IsReadOnly="True" VerticalAlignment="Top" Grid.Row="1" Margin="50,72,50,0" CanUserResizeColumns="False">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="{x:Static p:Resources.DataGridColumnChallengerDefeat}" Binding="{Binding NickNameChallenger}" Width="*" />
                 <DataGridTextColumn Header="{x:Static p:Resources.DataGridColumnDate}" Binding="{Binding DateMatch}" Width="*"/>
@@ -34,5 +34,6 @@
             <Button Content="Volver" Width="130" Height="30" Margin="10,0" Grid.Column="0" Click="Back_Click"/>
             <Button Content="Ver perfil" Width="130" Height="30" Margin="10,0" Grid.Column="1" Click="ViewProfile_Click"/>
         </Grid>
+        <Label x:Name="labelPointsEarned" Content="" HorizontalAlignment="Left" Margin="50,28,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
     </Grid>
 </Page>

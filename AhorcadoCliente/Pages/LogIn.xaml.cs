@@ -35,8 +35,8 @@ namespace AhorcadoCliente.Pages
 
         private void ponerCredenciales()
         {
-            txtEmail.Text = "c@gmail.com";
-            txtPassword.Password = "1";
+            txtEmail.Text = "ejemplo1@example.com";
+            txtPassword.Password = "contrasena1";
         }
 
         //BORRAR AL ENTREGAR

@@ -11,21 +11,33 @@
 
     <Grid Background="Bisque">
         <Label Content="{x:Static p:Resources.EmailRegister}" HorizontalAlignment="Left" Margin="83,48,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="83,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="139,97,0,0" VerticalAlignment="Top" Foreground="Red"/>
+        <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Margin="83,74,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="labelEmailEmpty" Content="{x:Static p:Resources.LabelEmailEmpty}" HorizontalAlignment="Left" Margin="52,96,0,0" VerticalAlignment="Top" Foreground="Red"/>
         <Label Content="{x:Static p:Resources.NickNameRegister}" HorizontalAlignment="Left" Margin="83,127,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="83,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="139,176,0,0" VerticalAlignment="Top" Foreground="Red"/>
+        <TextBox x:Name="txtNickname" HorizontalAlignment="Left" Margin="83,153,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="labelNicknameEmpty" Content="{x:Static p:Resources.LabelNickEmpty}" HorizontalAlignment="Left" Margin="75,176,0,0" VerticalAlignment="Top" Foreground="Red"/>
         <Label Content="{x:Static p:Resources.NamesRegister}" HorizontalAlignment="Left" Margin="83,212,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="83,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="139,261,0,0" VerticalAlignment="Top" Foreground="Red"/>
+        <TextBox x:Name="txtNames" HorizontalAlignment="Left" Margin="83,238,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="labelNamesEmpty" Content="{x:Static p:Resources.LabelNamesEmpty}" HorizontalAlignment="Left" Margin="74,261,0,0" VerticalAlignment="Top" Foreground="Red"/>
         <Label Content="{x:Static p:Resources.FirstNameRegister}" HorizontalAlignment="Left" Margin="83,293,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="83,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="139,342,0,0" VerticalAlignment="Top" Foreground="Red"/>
+        <TextBox x:Name="txtFirstSurname" HorizontalAlignment="Left" Margin="83,319,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="txtLabelFirstSurnameEmpty" Content="{x:Static p:Resources.LabelFirstSurnameEmpty}" HorizontalAlignment="Left" Margin="54,342,0,0" VerticalAlignment="Top" Foreground="Red"/>
         <Label Content="{x:Static p:Resources.SecondNameRegister}" HorizontalAlignment="Left" Margin="83,377,0,0" VerticalAlignment="Top"/>
-        <TextBox HorizontalAlignment="Left" Margin="83,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
-        <Label Content="Label" HorizontalAlignment="Left" Margin="139,426,0,0" VerticalAlignment="Top" Foreground="Red"/>
+        <TextBox x:Name="txtSecondSurname" HorizontalAlignment="Left" Margin="83,403,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150"/>
+        <Label x:Name="labelSecondSurnameEmpty" Content="{x:Static p:Resources.LabelSecondSurnameEmpty}" HorizontalAlignment="Left" Margin="55,421,0,0" VerticalAlignment="Top" Foreground="Red"/>
         <Button Content="{x:Static p:Resources.CancelRegisterButton}" HorizontalAlignment="Left" Margin="108,510,0,0" VerticalAlignment="Top" Width="100" Click="cancelRegister_Click"/>
-
+        <Label Content="{x:Static p:Resources.BirthDateRegister}" HorizontalAlignment="Left" Margin="477,322,0,0" VerticalAlignment="Top"/>
+        <DatePicker x:Name="dpBirthDate"  HorizontalAlignment="Left" Margin="463,348,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.166,-0.208"/>
+        <Label Content="{x:Static p:Resources.PhoneNumberRegister}" HorizontalAlignment="Left" Margin="477,50,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="txtTelephone" HorizontalAlignment="Left" Margin="477,76,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <Label Content="{x:Static p:Resources.PasswordRegister}" HorizontalAlignment="Left" Margin="502,135,0,0" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="txtPassword" HorizontalAlignment="Left" Margin="475,166,0,0"  VerticalAlignment="Top" Width="120"/>
+        <Label Content="{x:Static p:Resources.PasswordConfirmationRegister}" HorizontalAlignment="Left" Margin="477,233,0,0" VerticalAlignment="Top"/>
+        <PasswordBox x:Name="txtPasswordConfirmation" HorizontalAlignment="Left" Margin="475,265,0,0" VerticalAlignment="Top" Width="120"/>
+        <Label x:Name="labelTelephoneEmpty" Content="{x:Static p:Resources.LabelTelephoneEmpty}" HorizontalAlignment="Left" Margin="424,99,0,0" VerticalAlignment="Top" Foreground="Red"/>
+        <Label x:Name="labelPasswordEmpty" Content="{x:Static p:Resources.LabelPasswordEmpty}" HorizontalAlignment="Left" Margin="448,189,0,0" VerticalAlignment="Top" Foreground="Red"/>
+        <Label x:Name="labelPasswordConfirmationEmpty" Content="{x:Static p:Resources.LabelPaswwordConfirmationEmpty}" HorizontalAlignment="Left" Margin="425,0,0,0" VerticalAlignment="Center" Foreground="Red"/>
+        <Label x:Name="labelBirthDateEmpty" Content="{x:Static p:Resources.LabelBirthDateEmpty}" HorizontalAlignment="Left" Margin="400,372,0,0" VerticalAlignment="Top" Foreground="Red"/>
+        <Button Content="{x:Static p:Resources.RegisterButton}" HorizontalAlignment="Left" Margin="348,510,0,0" VerticalAlignment="Top" Width="163" Click="Register_Click"/>
     </Grid>
 </Page>
