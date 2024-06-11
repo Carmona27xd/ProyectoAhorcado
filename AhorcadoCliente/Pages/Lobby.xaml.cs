@@ -124,6 +124,16 @@ namespace AhorcadoCliente.Pages
         {
             dispatcherTimer.Stop();
             //NavigationService.Navigate(new Profile());
+            Player player = SessionManager.Instance.LoggedInPlayer;
+            goToProfile(player);
+        }
+
+        private void goToProfile(Player player)
+        {
+            if (player != null)
+            {
+                NavigationService.Navigate(new ViewProfile(player));
+            }
         }
     }
 }

@@ -235,6 +235,12 @@ namespace AhorcadoCliente.UserServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserServices/telephoneAlreadyExist", ReplyAction="http://tempuri.org/IUserServices/telephoneAlreadyExistResponse")]
         System.Threading.Tasks.Task<bool> telephoneAlreadyExistAsync(string telephone);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserServices/updatePlayerProfile", ReplyAction="http://tempuri.org/IUserServices/updatePlayerProfileResponse")]
+        bool updatePlayerProfile(AhorcadoCliente.UserServices.Player updatePlayer);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserServices/updatePlayerProfile", ReplyAction="http://tempuri.org/IUserServices/updatePlayerProfileResponse")]
+        System.Threading.Tasks.Task<bool> updatePlayerProfileAsync(AhorcadoCliente.UserServices.Player updatePlayer);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -302,6 +308,14 @@ namespace AhorcadoCliente.UserServices {
         
         public System.Threading.Tasks.Task<bool> telephoneAlreadyExistAsync(string telephone) {
             return base.Channel.telephoneAlreadyExistAsync(telephone);
+        }
+        
+        public bool updatePlayerProfile(AhorcadoCliente.UserServices.Player updatePlayer) {
+            return base.Channel.updatePlayerProfile(updatePlayer);
+        }
+        
+        public System.Threading.Tasks.Task<bool> updatePlayerProfileAsync(AhorcadoCliente.UserServices.Player updatePlayer) {
+            return base.Channel.updatePlayerProfileAsync(updatePlayer);
         }
     }
 }

@@ -37,5 +37,10 @@ namespace AhorcadoServicios
         {
             return UserDTO.telephoneAlreadyRegistered(telephone);
         }
+
+        public bool updatePlayerProfile(Player updatePlayer)
+        {
+            return UserDTO.updatePlayerProfile(updatePlayer);
+        }
     }
 }

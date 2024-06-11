@@ -51,7 +51,7 @@ namespace AhorcadoCliente.Pages
             NavigationService.Navigate(new Uri("/Pages/UserRegister.xaml", UriKind.Relative));
         }
 
-        private void changeEnslish_Click(object sender, RoutedEventArgs e)
+        private void changeEnglish_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.changeLanguage("en");
         }

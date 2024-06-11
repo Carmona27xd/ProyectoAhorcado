@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\wero1\Source\Repos\Carmona27xd\ProyectoAhorcado\AhorcadoCliente\obj\Debug\
+C:\Users\Emmanuel\Documents\Final\AhorcadoCliente\obj\Debug\
 AhorcadoCliente
 none
 false
 DEBUG;TRACE
-C:\Users\wero1\Source\Repos\Carmona27xd\ProyectoAhorcado\AhorcadoCliente\App.xaml
-11896423642
+C:\Users\Emmanuel\Documents\Final\AhorcadoCliente\App.xaml
+13-1212512501
 1-1726874498
-18-1594892495
+20-95219944
 15-472223226
-MainWindow.xaml;Pages\ChallengerView.xaml;Pages\CreateMatch.xaml;Pages\InGame.xaml;Pages\Lobby.xaml;Pages\LogIn.xaml;Pages\MatchHistory.xaml;Pages\UserRegister.xaml;Pages\WaitingGuest.xaml;Themes\PasswordBoxStyle.xaml;Themes\TextBoxStyle.xaml;
+MainWindow.xaml;Pages\ChallengerView.xaml;Pages\CreateMatch.xaml;Pages\InGame.xaml;Pages\Lobby.xaml;Pages\LogIn.xaml;Pages\MatchHistory.xaml;Pages\ModifyProfile.xaml;Pages\UserRegister.xaml;Pages\ViewProfile.xaml;Pages\WaitingGuest.xaml;Themes\PasswordBoxStyle.xaml;Themes\TextBoxStyle.xaml;
 
 False
 

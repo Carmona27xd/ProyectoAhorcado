@@ -97,7 +97,25 @@ namespace AhorcadoCliente.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Cancelar registro.
+        ///   Busca una cadena traducida similar a Salir sin guardar los cambios?.
+        /// </summary>
+        public static string CancelModifyConfirmation {
+            get {
+                return ResourceManager.GetString("CancelModifyConfirmation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cancelar modificacion.
+        /// </summary>
+        public static string CancelModifyHead {
+            get {
+                return ResourceManager.GetString("CancelModifyHead", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cancelar .
         /// </summary>
         public static string CancelRegisterButton {
             get {
@@ -129,6 +147,15 @@ namespace AhorcadoCliente.Properties {
         public static string ConfirmationMessage {
             get {
                 return ResourceManager.GetString("ConfirmationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Se ha modificato tu perfil.
+        /// </summary>
+        public static string ConfirmationModify {
+            get {
+                return ResourceManager.GetString("ConfirmationModify", resourceCulture);
             }
         }
         
@@ -273,6 +300,15 @@ namespace AhorcadoCliente.Properties {
         public static string ErrorLogginMessage {
             get {
                 return ResourceManager.GetString("ErrorLogginMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Error al modificar el perfil.
+        /// </summary>
+        public static string ErrorModify {
+            get {
+                return ResourceManager.GetString("ErrorModify", resourceCulture);
             }
         }
         
@@ -547,7 +583,7 @@ namespace AhorcadoCliente.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a Historial de partidas.
+        ///   Busca una cadena traducida similar a Historial.
         /// </summary>
         public static string MatchHistoryButton {
             get {
@@ -579,6 +615,15 @@ namespace AhorcadoCliente.Properties {
         public static string MatchLeaveMessageError {
             get {
                 return ResourceManager.GetString("MatchLeaveMessageError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Modificar.
+        /// </summary>
+        public static string ModifyProfileButton {
+            get {
+                return ResourceManager.GetString("ModifyProfileButton", resourceCulture);
             }
         }
         
@@ -696,6 +741,15 @@ namespace AhorcadoCliente.Properties {
         public static string PlayerJoinedMessage {
             get {
                 return ResourceManager.GetString("PlayerJoinedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tu perfil del jugador.
+        /// </summary>
+        public static string ProfileViewLabel {
+            get {
+                return ResourceManager.GetString("ProfileViewLabel", resourceCulture);
             }
         }
         

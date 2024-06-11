@@ -30,6 +30,40 @@ namespace AhorcadoServicios.Model.DTO
             }
         }
 
+        public static bool updatePlayerProfile(Player updatedPlayer)
+        {
+            try
+            {
+                var connection = ConnectionDB.getConnection();
+                connection.Open();
+                DataContext dataContext = new DataContext(connection);
+                var playerToUpdate = dataContext.GetTable<Player>().FirstOrDefault(pl => pl.PlayerID == updatedPlayer.PlayerID);
+
+                if (playerToUpdate != null)
+                {
+                    playerToUpdate.Names = updatedPlayer.Names;
+                    playerToUpdate.FirstSurname = updatedPlayer.FirstSurname;
+                    playerToUpdate.SecondSurname = updatedPlayer.SecondSurname;
+                    playerToUpdate.NickName = updatedPlayer.NickName;
+                    playerToUpdate.Email = updatedPlayer.Email;
+                    playerToUpdate.PhoneNumber = updatedPlayer.PhoneNumber;
+                    playerToUpdate.Password = updatedPlayer.Password;
+                    playerToUpdate.BirthDate = updatedPlayer.BirthDate;
+
+                    dataContext.SubmitChanges();
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+
         public static bool registerUser(Player newPlayer)
         {
             try

@@ -22,5 +22,7 @@ namespace AhorcadoServicios
         bool nicknameAlreadyRegistered(string nickname);
         [OperationContract]
         bool telephoneAlreadyExist(string telephone);
+        [OperationContract]
+        bool updatePlayerProfile(Player updatePlayer);
     }
 }

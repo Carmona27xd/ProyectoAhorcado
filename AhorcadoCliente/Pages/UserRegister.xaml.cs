@@ -148,7 +148,7 @@ namespace AhorcadoCliente.Pages
             labelPasswordConfirmationEmpty.Visibility = Visibility.Hidden;
             labelPasswordEmpty.Visibility = Visibility.Hidden;
             labelSecondSurnameEmpty.Visibility = Visibility.Hidden;
-            txtLabelFirstSurnameEmpty.Visibility= Visibility.Hidden;
+            txtLabelFirstSurnameEmpty.Visibility = Visibility.Hidden;
             labelTelephoneEmpty.Visibility = Visibility.Hidden;
         }
 
@@ -199,6 +199,7 @@ namespace AhorcadoCliente.Pages
                                     {
                                         string message = Properties.Resources.ConfirmationUserRegister;
                                         MessageBox.Show(message);
+                                        NavigationService.Navigate(new LogIn(Application.Current.MainWindow as MainWindow));
                                     }
                                     else
                                     {
@@ -222,8 +223,7 @@ namespace AhorcadoCliente.Pages
             }
         }
 
-
-        private Player createNewPlayer ()
+        private Player createNewPlayer()
         {
             Player newPlayer = new Player();
             newPlayer.Email = txtEmail.Text.Trim();
@@ -249,7 +249,7 @@ namespace AhorcadoCliente.Pages
             string password = txtPassword.Password.Trim();
             string phoneNumber = txtTelephone.Text.Trim();
 
-            if (validateNames(name) &&  validateNames(firstSurname) && validateNames(secondSurname) && validateNick(nickName)
+            if (validateNames(name) && validateNames(firstSurname) && validateNames(secondSurname) && validateNick(nickName)
                 && validateEmail(email) && validatePassword(password) && validateTelephone(phoneNumber))
             {
                 return true;
