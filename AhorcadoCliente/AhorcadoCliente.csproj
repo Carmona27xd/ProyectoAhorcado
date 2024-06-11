@@ -264,6 +264,8 @@
     <Resource Include="Images\hololive-icon.png" />
     <Resource Include="Images\hangman-icon.png" />
     <Resource Include="Images\skull-icon.png" />
+    <Resource Include="Images\horizontal-skull.png" />
+    <Resource Include="Images\vertical-skull.png" />
     <Content Include="Music\Music.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

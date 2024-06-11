@@ -100,6 +100,11 @@ namespace AhorcadoCliente.Pages
         {
             NavigationService.Navigate(new MatchHistory());
         }
+
+        private void ViewProfile_Click(object sender, RoutedEventArgs e)
+        {
+            //NavigationService.Navigate(new Profile());
+        }
     }
 }
 
