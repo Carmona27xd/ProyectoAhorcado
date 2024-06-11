@@ -574,6 +574,15 @@ namespace AhorcadoCliente.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Ver Perfil.
+        /// </summary>
+        public static string ViewProfileButton {
+            get {
+                return ResourceManager.GetString("ViewProfileButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Esperando a otro jugador.
         /// </summary>
         public static string WaitGuestMessage {

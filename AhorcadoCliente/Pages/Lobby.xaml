@@ -6,42 +6,154 @@
       xmlns:local="clr-namespace:AhorcadoCliente.Pages"
       xmlns:p="clr-namespace:AhorcadoCliente.Properties"
       mc:Ignorable="d"
-      d:DesignHeight="600" d:DesignWidth="800"
+      d:DesignHeight="720" d:DesignWidth="1080"
       Title="Lobby">
 
-    <Grid Background="Azure">
+    <Grid Background="#4d9eed">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Label Content="{x:Static p:Resources.LobbyLabel}" Grid.Row="0" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
-        <Grid Grid.Row="2" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Bottom">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-            </Grid.ColumnDefinitions>
-            <Button Content="{x:Static p:Resources.LogOutButton}" Width="130" Height="30" Margin="10,0" Grid.Column="0" Click="LogOut_CLick"/>
-            <Button Content="{x:Static p:Resources.MatchHistoryButton}" Width="130" Height="30" Margin="10,0" Grid.Column="1" Grid.ColumnSpan="2" Click="MatchHistoryButton_Click"/>
-            <Button Content="{x:Static p:Resources.CreateMatch}" Width="130" Height="30" Margin="10,0" Grid.Column="3" Click="CreateMatch_Click"/>
-        </Grid>
-        <DataGrid x:Name="MatchesDataGrid" AutoGenerateColumns="False" Margin="0,10,0,0" Grid.Row="1" CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserAddRows="False" CanUserResizeRows="False" CanUserSortColumns="False"
-         IsReadOnly="True" HorizontalAlignment="Center" VerticalAlignment="Top">
+
+        <!-- Lobby Label -->
+        <Label Content="{x:Static p:Resources.LobbyLabel}" 
+               HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top"
+               FontFamily="Monocraft" FontSize="42" FontWeight="Medium" Foreground="#D6D5A8"/>
+
+        <!-- DataGrid for matches -->
+        <DataGrid x:Name="MatchesDataGrid" AutoGenerateColumns="False" Margin="325,5,35,55" Grid.Row="1" 
+                  CanUserResizeColumns="False" CanUserReorderColumns="False" CanUserAddRows="False" 
+                  CanUserResizeRows="False" CanUserSortColumns="False" IsReadOnly="True" 
+                  Background="#fbfbfc" BorderBrush="#D6D5A8" BorderThickness="1">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="{x:Static p:Resources.DataGridColumnNickName}" Binding="{Binding NickNameChallenger}" Width="160" />
-                <DataGridTextColumn Header="{x:Static p:Resources.DataGridColumnEmail}" Binding="{Binding EmailChallenger}" Width="160"/>
-                <DataGridTextColumn Header="{x:Static p:Resources.DataGridColumnDate}" Binding="{Binding DateMatch}" Width="160"/>
-                <DataGridTemplateColumn Header="{x:Static p:Resources.DataGridColumnJoin}" Width="160">
+                <DataGridTextColumn Header="{x:Static p:Resources.DataGridColumnNickName}" Binding="{Binding NickNameChallenger}" Width="*" />
+                <DataGridTextColumn Header="{x:Static p:Resources.DataGridColumnEmail}" Binding="{Binding EmailChallenger}" Width="*" />
+                <DataGridTextColumn Header="{x:Static p:Resources.DataGridColumnDate}" Binding="{Binding DateMatch}" Width="*" />
+                <DataGridTemplateColumn Header="{x:Static p:Resources.DataGridColumnJoin}" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>
                             <Button Content="{x:Static p:Resources.DataGridColumnJoin}" Command="{Binding DataContext.JoinCommand, RelativeSource={RelativeSource AncestorType=DataGrid}}" 
-                                    CommandParameter="{Binding}" Click="joinMatch_Click"/>
+                                    CommandParameter="{Binding}" Click="joinMatch_Click" 
+                                    FontFamily="Monocraft" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Cursor="Hand"
+                                    Background="#28c4fc">
+                                <Button.Style>
+                                    <Style TargetType="{x:Type Button}">
+                                        <Style.Triggers>
+                                            <Trigger Property="IsMouseOver" Value="True">
+                                                <Setter Property="Background" Value="#1B2430"/>
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Button.Style>
+                                <Button.Template>
+                                    <ControlTemplate TargetType="{x:Type Button}">
+                                        <Border Width="120" Height="35" CornerRadius="12" Background="{TemplateBinding Background}">
+                                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        </Border>
+                                    </ControlTemplate>
+                                </Button.Template>
+                            </Button>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
             </DataGrid.Columns>
         </DataGrid>
+
+        <!-- Buttons at the bottom -->
+        <Grid Grid.Row="2" HorizontalAlignment="Stretch" Margin="10,10,10,10" VerticalAlignment="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="37*"/>
+                <ColumnDefinition Width="16*"/>
+                <ColumnDefinition Width="53*"/>
+                <ColumnDefinition Width="53*"/>
+                <ColumnDefinition Width="53*"/>
+            </Grid.ColumnDefinitions>
+            <Button Content="{x:Static p:Resources.LogOutButton}" Height="45" Margin="80,-28,32,28" Click="LogOut_CLick" 
+                    FontFamily="Monocraft" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Cursor="Hand"
+                    Background="#28c4fc" Grid.ColumnSpan="2">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#1B2430"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="130" Height="45" CornerRadius="12" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Image Source="/Images/vertical-skull.png" Width="413" Height="429" Margin="-40,-512,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+
+            <Button Content="{x:Static p:Resources.ViewProfileButton}" Height="45" Margin="65,-28,37,28" Grid.Column="2" Click="ViewProfile_Click" 
+                    FontFamily="Monocraft" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Cursor="Hand"
+                    Background="#28c4fc">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#1B2430"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="130" Height="45" CornerRadius="12" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button Content="{x:Static p:Resources.MatchHistoryButton}" Height="45" Margin="68,-28,45,28" Grid.Column="3" Click="MatchHistoryButton_Click" 
+        FontFamily="Monocraft" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Cursor="Hand"
+        Background="#28c4fc">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#1B2430"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="130" Height="45" CornerRadius="12" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button Content="{x:Static p:Resources.CreateMatch}" Height="45" Margin="67,-28,35,28" Grid.Column="4" Click="CreateMatch_Click" 
+                    FontFamily="Monocraft" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Cursor="Hand"
+                    Background="#28c4fc">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#1B2430"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="130" Height="45" CornerRadius="12" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+        </Grid>
     </Grid>
 </Page>

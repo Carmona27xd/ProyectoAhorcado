@@ -288,6 +288,9 @@
   <data name="UserRegisterLabel" xml:space="preserve">
     <value>No tienes una cuenta? Crea una!</value>
   </data>
+  <data name="ViewProfileButton" xml:space="preserve">
+    <value>Ver Perfil</value>
+  </data>
   <data name="WaitGuestMessage" xml:space="preserve">
     <value>Esperando a otro jugador</value>
   </data>
