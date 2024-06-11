@@ -1,0 +1,196 @@
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+# Build results
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Aa]rchive/
+[Bb]in/
+[Oo]bj/
+[Ll]og/
+
+# Auto-generated files
+*.dbmdl
+*.pdb
+*.log
+*.rsuser
+*.rsb
+*.sdf
+*.sqlite
+*.sqlproj.user
+*.sln*
+*_i.c
+*_p.c
+*.ilk
+*.meta
+*.obj
+*.pch
+*.ids
+*.idb
+*.ipch
+*.tlog
+*.log
+*.vspscc
+*.vssscc
+*.cache
+*.csproj.user
+*.resources.dll
+*.ncb
+*.opensdf
+*.filters
+*.VisualState.xml
+*.vsp
+*.vspx
+*.glimpse.xml
+GlimpseSecurityPolicy.cs
+
+# Web and database files
+sql/
+*.mdf
+*.ldf
+
+# Personal settings
+.vscode/
+.vscode/*
+*.vcxproj.user
+*.code-workspace
+
+# Other
+_ReSharper*/
+*.resharper
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+*.DLL
+*.EXE
+*.COM
+*.SYS
+*.drv
+*.tlb
+*.olb
+*.obj
+*.crl
+*.cache
+*.mp3
+*.mp4
+*.avi
+*.flv
+*.mov
+*.m4v
+*.log
+*.msg
+*.tif
+*.tiff
+*.ico
+*.dll
+*.class
+*.jar
+*.war
+*.EAR
+*.config
+
+# Project-specific
+slnx.sqlite
+
+# Avoid committing compiled libraries
+*.dll
+*.exe
+*.so
+*.dylib
+
+# Avoid committing sensitive data
+*.pem
+*.cer
+*.crt
+*.pfx
+*.key
+
+# Rider settings
+.idea/
+*.sln.iml
+.idea/*
+
+# JetBrains Rider
+.idea/
+
+# Rider Local History
+.idea/recentProjects.xml
+
+# Rider / IntelliJ
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/vcs.xml
+.idea/modules.xml
+.idea/jarRepositories.xml
+.idea/copyright/
+
+# Rider gradle
+.idea/gradle.xml
+.idea/libraries
+.idea/misc.xml
+.idea/modules.xml
+
+# Rider run configurations
+.idea/runConfigurations
+
+# Local History
+.idea/localHistory
+
+# IIS
+iisexpress/
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# StyleCop
+StyleCopReport.xml
+
+# Files built by Visual Studio
+*.cache
+
+# User-specific files
+*.rsuser
+
+# Mono Auto Generated Files
+mono_crash.*
+
+# Windows image file caches
+Thumbs.db
+ehthumbs.db
+
+# Folder config file
+Desktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# VS Code
+.vscode/
+
+# Mac
+*.DS_Store
+.DS_Store?
+
+# Node
+node_modules/
+
+# Dependency directories
+.nuget/
+packages/
+
+# Logs
+logs
+*.log
+
+# OS-generated files
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
