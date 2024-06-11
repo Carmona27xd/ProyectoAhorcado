@@ -9,15 +9,37 @@
       d:DesignHeight="600" d:DesignWidth="800"
       Title="ChallengerView">
 
-    <Grid Background="LightYellow" x:Name="Game">
+    <Grid Background="#4d9eed" x:Name="Game">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,10">
-            <Button Content="{x:Static p:Resources.LeaveMatchButton}" Height="35" Width="130" Margin="5" Click="LeaveMatch_Click"/>
+            <!-- Botón LeaveMatchButton con estilo del Lobby -->
+            <Button Content="{x:Static p:Resources.LeaveMatchButton}" Height="35" Width="130" Click="LeaveMatch_Click"
+                    FontFamily="Monocraft" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Cursor="Hand"
+                    Background="#28c4fc">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#1B2430"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="130" Height="35" CornerRadius="12" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <!-- Botón LeaveMatchButton con estilo del Lobby -->
         </StackPanel>
         <Image Name="imageControl" Source="pack://application:,,,/Images/0.jpg" HorizontalAlignment="Left" Height="200" Margin="450,50,0,0" VerticalAlignment="Top" Width="200"/>
+        <Image Source="/Images/skull-hand.png" HorizontalAlignment="Left" Height="220" Margin="0,380,0,0" VerticalAlignment="Top" Width="243" Grid.RowSpan="2"/>
         <WrapPanel x:Name="WordPanel" Margin="60,270,60,0" VerticalAlignment="Top" Height="auto" HorizontalAlignment="Center"/>
         <TextBlock x:Name="txtBockClue" HorizontalAlignment="Left" Margin="75,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="200" Width="355" FontSize="20"/>
     </Grid>

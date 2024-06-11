@@ -9,14 +9,14 @@
       d:DesignHeight="600" d:DesignWidth="800"
       Title="MatchHistory">
 
-    <Grid Background="Wheat">
+    <Grid Background="#4d9eed">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <Label Content="{x:Static p:Resources.MatchHistoryLabel}" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
+        <Label Content="{x:Static p:Resources.MatchHistoryLabel}" FontFamily="Monocraft" HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" FontSize="50" FontWeight="Bold"/>
 
         <DataGrid x:Name="HistoryDataGrid" AutoGenerateColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False" CanUserAddRows="False" CanUserSortColumns="False"
                   IsReadOnly="True" VerticalAlignment="Top" Grid.Row="1" Margin="50,72,50,0" CanUserResizeColumns="False">
@@ -31,8 +31,47 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Button Content="Volver" Width="130" Height="30" Margin="10,0" Grid.Column="0" Click="Back_Click"/>
-            <Button Content="Ver perfil" Width="130" Height="30" Margin="10,0" Grid.Column="1" Click="ViewProfile_Click"/>
+            <Button Content="Volver" Width="130" Height="30" Margin="10,0" Grid.Column="0" Click="Back_Click"
+        FontFamily="Monocraft" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Cursor="Hand"
+        Background="#28c4fc">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#1B2430"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="130" Height="30" CornerRadius="6" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+
+            <Button Content="Ver perfil" Width="130" Height="30" Margin="10,0" Grid.Column="1" Click="ViewProfile_Click"
+        FontFamily="Monocraft" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Cursor="Hand"
+        Background="#28c4fc">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#1B2430"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="130" Height="30" CornerRadius="6" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </Grid>
         <Label x:Name="labelPointsEarned" Content="" HorizontalAlignment="Left" Margin="50,28,0,0" Grid.Row="1" VerticalAlignment="Top" FontSize="20" FontWeight="Bold"/>
     </Grid>

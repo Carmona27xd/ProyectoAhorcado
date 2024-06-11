@@ -266,6 +266,10 @@
     <Resource Include="Images\skull-icon.png" />
     <Resource Include="Images\horizontal-skull.png" />
     <Resource Include="Images\vertical-skull.png" />
+    <Resource Include="Images\karthus.png" />
+    <Resource Include="Images\skull-hand.png" />
+    <Resource Include="Images\skull-motorcycle.png" />
+    <Resource Include="Images\skull-wings.png" />
     <Content Include="Music\Music.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

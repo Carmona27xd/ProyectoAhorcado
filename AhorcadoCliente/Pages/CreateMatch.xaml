@@ -9,23 +9,101 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="CreateMatch">
 
-    <Grid Background="Beige">
+    <Grid Background="#4d9eed">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
-        <ComboBox x:Name="cbWordCategories" HorizontalAlignment="Left" Margin="158,184,0,0" VerticalAlignment="Top" Width="200" SelectionChanged="cbWordCategories_SelectionChanged"/>
+        <ComboBox x:Name="cbWordCategories" HorizontalAlignment="Left" Margin="292,185,0,0" VerticalAlignment="Top" Width="200" SelectionChanged="cbWordCategories_SelectionChanged"/>
 
         <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,10">
-            <Button Content="{x:Static p:Resources.CancelCreateMatchButton}" Height="35" Width="130" Margin="5" Click="Cancel_Click"/>
-            <Button x:Name="CreateMatchButton" Content="{x:Static p:Resources.CreateMatchButton}" Height="35" Width="130" Margin="5" Click="CreateMatch_Click"/>
+            <Button Content="{x:Static p:Resources.CancelCreateMatchButton}" Height="35" Width="130" Click="Cancel_Click"
+                    FontFamily="Monocraft" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Cursor="Hand"
+                    Background="#28c4fc">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#1B2430"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="130" Height="35" CornerRadius="8" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
+            <Button x:Name="CreateMatchButton" Content="{x:Static p:Resources.CreateMatchButton}" Height="35" Width="130" Margin="5" Click="CreateMatch_Click"
+                    FontFamily="Monocraft" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Cursor="Hand"
+                    Background="#28c4fc">
+                <Button.Style>
+                    <Style TargetType="{x:Type Button}">
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#1B2430"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Button.Style>
+                <Button.Template>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border Width="130" Height="35" CornerRadius="8" Background="{TemplateBinding Background}">
+                            <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+            </Button>
         </StackPanel>
-        <Label Content="{x:Static p:Resources.CategoriesCreateMatch}" HorizontalAlignment="Left" Margin="225,153,0,0" VerticalAlignment="Top"/>
-        <ComboBox x:Name="cbSelectWord" HorizontalAlignment="Left" Margin="441,184,0,0" VerticalAlignment="Top" Width="200"/>
-        <Label Content="{x:Static p:Resources.SelectWordCreateMatch}" HorizontalAlignment="Left" Margin="479,153,0,0" VerticalAlignment="Top"/>
-        <Label Content="{x:Static p:Resources.GameLanguageLabel}" HorizontalAlignment="Left" Margin="158,75,0,0" VerticalAlignment="Top"/>
-        <Button Content="{x:Static p:Resources.EnglishButton}" HorizontalAlignment="Left" Margin="400,78,0,0" VerticalAlignment="Top" Width="90" Height="25" Click="EnglishSelection_Click"/>
-        <Button Content="{x:Static p:Resources.SpanishButton}" HorizontalAlignment="Left" Margin="541,78,0,0" VerticalAlignment="Top" Width="90" Height="25" Click="SpanishSelection_Click" />
+        <Label Content="{x:Static p:Resources.CategoriesCreateMatch}" HorizontalAlignment="Left" Margin="292,155,0,0" VerticalAlignment="Top" FontFamily="Monocraft" RenderTransformOrigin="-0.111,0.52"/>
+        <ComboBox x:Name="cbSelectWord" HorizontalAlignment="Left" Margin="575,185,0,0" VerticalAlignment="Top" Width="200"/>
+        <Label Content="{x:Static p:Resources.SelectWordCreateMatch}" HorizontalAlignment="Left" Margin="575,155,0,0" VerticalAlignment="Top"  FontFamily="Monocraft"/>
+        <Label Content="{x:Static p:Resources.GameLanguageLabel}" HorizontalAlignment="Left" Margin="270,81,0,0" VerticalAlignment="Top"  FontFamily="Monocraft" Width="290"/>
+        <Button Content="{x:Static p:Resources.EnglishButton}" HorizontalAlignment="Left" Margin="541,80,0,0" VerticalAlignment="Top" Width="90" Height="25" Click="EnglishSelection_Click"
+        FontFamily="Monocraft" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Cursor="Hand"
+        Background="#28c4fc">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#1B2430"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="90" Height="25" CornerRadius="8" Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
+        <Button Content="{x:Static p:Resources.SpanishButton}" HorizontalAlignment="Left" Margin="650,78,0,0" VerticalAlignment="Top" Width="90" Height="25" Click="SpanishSelection_Click"
+        FontFamily="Monocraft" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Cursor="Hand"
+        Background="#28c4fc">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#1B2430"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="90" Height="25" CornerRadius="8" Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+        <Image Source="/Images/skull-motorcycle.png" Margin="-28,215,502,-12" Grid.RowSpan="2"></Image>
     </Grid>
 </Page>
