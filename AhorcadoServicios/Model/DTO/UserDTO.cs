@@ -26,7 +26,7 @@ namespace AhorcadoServicios.Model.DTO
             }
             catch (SqlException ex)
             {
-                throw ex;
+                throw 
             }
         }
 
