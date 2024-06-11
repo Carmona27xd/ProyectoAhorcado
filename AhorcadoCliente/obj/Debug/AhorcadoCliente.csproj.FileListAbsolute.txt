@@ -155,3 +155,7 @@ C:\Users\Emmanuel\Documents\Final\AhorcadoCliente\obj\Debug\AhorcadoCliente.exe
 C:\Users\Emmanuel\Documents\Final\AhorcadoCliente\obj\Debug\AhorcadoCliente.pdb
 C:\Users\Emmanuel\Documents\Final\AhorcadoCliente\obj\Debug\Pages\ModifyProfile.g.cs
 C:\Users\Emmanuel\Documents\Final\AhorcadoCliente\obj\Debug\Pages\ModifyProfile.baml
+C:\Users\wero1\Source\Repos\Carmona27xd\ProyectoAhorcado\AhorcadoCliente\obj\Debug\Pages\ModifyProfile.g.cs
+C:\Users\wero1\Source\Repos\Carmona27xd\ProyectoAhorcado\AhorcadoCliente\obj\Debug\Pages\ViewProfile.g.cs
+C:\Users\wero1\Source\Repos\Carmona27xd\ProyectoAhorcado\AhorcadoCliente\obj\Debug\Pages\ModifyProfile.baml
+C:\Users\wero1\Source\Repos\Carmona27xd\ProyectoAhorcado\AhorcadoCliente\obj\Debug\Pages\ViewProfile.baml

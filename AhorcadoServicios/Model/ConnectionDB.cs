@@ -10,7 +10,7 @@ namespace AhorcadoServicios.Model
     {
         public static SqlConnection getConnection()
         {
-            string connectionString = "Data Source=CARMONA;Initial Catalog=ahorcado;Integrated Security=True";
+            string connectionString = "Data Source=shadow\\SQLEXPRESS;Initial Catalog=ahorcado;Integrated Security=True";
             return new SqlConnection(connectionString);
         }
     }
