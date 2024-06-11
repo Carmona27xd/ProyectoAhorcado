@@ -90,7 +90,7 @@
                 </Button.Template>
             </Button>
 
-            <Image Source="/Images/vertical-skull.png" Width="413" Height="429" Margin="-40,-512,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="3"/>
+            <Image Source="/Images/vertical-skull.png" Width="515" Height="473" Margin="20,-528,0,0" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.ColumnSpan="4"/>
 
             <Button Content="{x:Static p:Resources.ViewProfileButton}" Height="45" Margin="65,-28,37,28" Grid.Column="2" Click="ViewProfile_Click" 
                     FontFamily="Monocraft" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Cursor="Hand"

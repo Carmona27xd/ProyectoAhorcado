@@ -16,5 +16,5 @@ C:\Users\wero1\Source\Repos\Carmona27xd\ProyectoAhorcado\AhorcadoCliente\App.xam
 15-472223226
 MainWindow.xaml;Pages\ChallengerView.xaml;Pages\CreateMatch.xaml;Pages\InGame.xaml;Pages\Lobby.xaml;Pages\LogIn.xaml;Pages\MatchHistory.xaml;Pages\UserRegister.xaml;Pages\WaitingGuest.xaml;Themes\PasswordBoxStyle.xaml;Themes\TextBoxStyle.xaml;
 
-False
+True
 

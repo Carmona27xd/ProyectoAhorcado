@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\AhorcadoCliente",
+    "\\AhorcadoCliente\\Pages"
   ],
+  "SelectedNode": "\\AhorcadoCliente\\Pages\\MatchHistory.xaml",
   "PreviewInSolutionExplorer": false
 }
