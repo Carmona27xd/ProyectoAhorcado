@@ -33,3 +33,10 @@ C:\Users\wero1\Source\Repos\ProyectoAhorcado\AhorcadoServicios\obj\Debug\Ahorcad
 C:\Users\wero1\Source\Repos\ProyectoAhorcado\AhorcadoServicios\obj\Debug\AhorcadoServicios.csproj.CoreCompileInputs.cache
 C:\Users\wero1\Source\Repos\ProyectoAhorcado\AhorcadoServicios\obj\Debug\AhorcadoServicios.dll
 C:\Users\wero1\Source\Repos\ProyectoAhorcado\AhorcadoServicios\obj\Debug\AhorcadoServicios.pdb
+C:\Users\Emmanuel\source\repos\NuevoProyecto\AhorcadoServicios\bin\AhorcadoServicios.dll.config
+C:\Users\Emmanuel\source\repos\NuevoProyecto\AhorcadoServicios\bin\AhorcadoServicios.dll
+C:\Users\Emmanuel\source\repos\NuevoProyecto\AhorcadoServicios\bin\AhorcadoServicios.pdb
+C:\Users\Emmanuel\source\repos\NuevoProyecto\AhorcadoServicios\obj\Debug\AhorcadoServicios.csproj.AssemblyReference.cache
+C:\Users\Emmanuel\source\repos\NuevoProyecto\AhorcadoServicios\obj\Debug\AhorcadoServicios.csproj.CoreCompileInputs.cache
+C:\Users\Emmanuel\source\repos\NuevoProyecto\AhorcadoServicios\obj\Debug\AhorcadoServicios.dll
+C:\Users\Emmanuel\source\repos\NuevoProyecto\AhorcadoServicios\obj\Debug\AhorcadoServicios.pdb

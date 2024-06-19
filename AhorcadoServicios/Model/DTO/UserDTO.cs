@@ -12,6 +12,24 @@ namespace AhorcadoServicios.Model.DTO
 {
     public class UserDTO
     {
+        public static int getPointsEarned(int playerID)
+        {
+            try
+            {
+                var connection = ConnectionDB.getConnection();
+                connection.Open();
+                DataContext dataContext = new DataContext(connection);
+                var pointEarned = (from pl in dataContext.GetTable<Player>()
+                                   where pl.PlayerID == playerID
+                                   select pl.PointsEarned).FirstOrDefault();
+                return pointEarned;
+            }
+            catch (SqlException ex)
+            {
+                throw ex;
+            }
+        }
+
         public static Player logIn(string email, string password)
         {
             try

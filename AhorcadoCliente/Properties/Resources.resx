@@ -214,7 +214,7 @@
     <value>Selecciona el idioma de la palabra</value>
   </data>
   <data name="GuestLeaveMatchMessage" xml:space="preserve">
-    <value>El invitado dejo el juego!</value>
+    <value>El adivinador ha dejado el juego!</value>
   </data>
   <data name="HangmanTittle" xml:space="preserve">
     <value>Ahorcado</value>

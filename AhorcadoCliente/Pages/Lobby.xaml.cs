@@ -45,6 +45,7 @@ namespace AhorcadoCliente.Pages
         private void DispatcherTimer_Tick(object sender, EventArgs e)
         {
             getAvaliableMatches();
+
         }
 
         private void joinMatch_Click(object sender, RoutedEventArgs e)
@@ -75,6 +76,8 @@ namespace AhorcadoCliente.Pages
                 Player player = SessionManager.Instance.LoggedInPlayer;
                 MatchGame[] aux = await gameServicesClient.getMatchListAsync(player.PlayerID);
                 matchesAvaliables = aux.ToList();
+                MatchesDataGrid.ItemsSource = null;
+
                 if (matchesAvaliables.Count > 0)
                 {
                     MatchesDataGrid.ItemsSource = matchesAvaliables;

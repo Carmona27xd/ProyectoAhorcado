@@ -18,6 +18,11 @@ namespace AhorcadoServicios
             return UserDTO.emailAlreadyRegistered(email);
         }
 
+        public int getPointsEarned(int playerID)
+        {
+            return UserDTO.getPointsEarned(playerID);
+        }
+
         public Player logIn(string email, string password)
         {
             return UserDTO.logIn(email, password);

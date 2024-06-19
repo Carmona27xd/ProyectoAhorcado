@@ -43,6 +43,12 @@
   <wsdl:message name="IUserServices_updatePlayerProfile_OutputMessage">
     <wsdl:part name="parameters" element="tns:updatePlayerProfileResponse" />
   </wsdl:message>
+  <wsdl:message name="IUserServices_getPointsEarned_InputMessage">
+    <wsdl:part name="parameters" element="tns:getPointsEarned" />
+  </wsdl:message>
+  <wsdl:message name="IUserServices_getPointsEarned_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getPointsEarnedResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUserServices">
     <wsdl:operation name="logIn">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserServices/logIn" message="tns:IUserServices_logIn_InputMessage" />
@@ -67,6 +73,10 @@
     <wsdl:operation name="updatePlayerProfile">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserServices/updatePlayerProfile" message="tns:IUserServices_updatePlayerProfile_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserServices/updatePlayerProfileResponse" message="tns:IUserServices_updatePlayerProfile_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getPointsEarned">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserServices/getPointsEarned" message="tns:IUserServices_getPointsEarned_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserServices/getPointsEarnedResponse" message="tns:IUserServices_getPointsEarned_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IUserServices" type="tns:IUserServices">
@@ -118,6 +128,15 @@
     </wsdl:operation>
     <wsdl:operation name="updatePlayerProfile">
       <soap:operation soapAction="http://tempuri.org/IUserServices/updatePlayerProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getPointsEarned">
+      <soap:operation soapAction="http://tempuri.org/IUserServices/getPointsEarned" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

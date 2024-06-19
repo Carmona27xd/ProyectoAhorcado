@@ -22,6 +22,7 @@ namespace AhorcadoCliente.Pages
     /// </summary>
     public partial class ViewProfile : Page
     {
+        UserServicesClient userServicesClient = new UserServicesClient();
         GameServicesClient gameServicesClient = new GameServicesClient();
         Player player;
         public ViewProfile(Player player)
@@ -44,6 +45,8 @@ namespace AhorcadoCliente.Pages
 
         private void initializeInformation()
         {
+
+            int pointsEarned = userServicesClient.getPointsEarned(player.PlayerID);
             string labelEmailString = Properties.Resources.EmailRegister;
             string nickNameString = Properties.Resources.NickNameRegister;
             string namesString = Properties.Resources.NamesRegister;
@@ -58,7 +61,7 @@ namespace AhorcadoCliente.Pages
             labelNames.Content = namesString + ": " + player.Names;
             labelFirstSurname.Content = firstSurnameString + ": " + player.FirstSurname;
             labelSecondSurname.Content = secondSurnameString + ": " + player.SecondSurname;
-            labelPointsEarned.Content = pointsEarnedString + ": " + player.PointsEarned;
+            labelPointsEarned.Content = pointsEarnedString + ": " + pointsEarned;
             labelBirthDay.Content = birthDateString + ": " + player.BirthDate;
             labelTelephone.Content = telephoneString + ": " + player.PhoneNumber;
         }

@@ -24,5 +24,7 @@ namespace AhorcadoServicios
         bool telephoneAlreadyExist(string telephone);
         [OperationContract]
         bool updatePlayerProfile(Player updatePlayer);
+        [OperationContract]
+        int getPointsEarned(int playerID);
     }
 }

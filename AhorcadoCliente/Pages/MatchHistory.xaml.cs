@@ -24,6 +24,7 @@ namespace AhorcadoCliente.Pages
     {
         List<MatchGame> matchesPlayed;
         GameServicesClient gameServicesClient = new GameServicesClient();
+        UserServicesClient userServicesClient = new UserServicesClient();
         public MatchHistory()
         {
             InitializeComponent();
@@ -33,8 +34,8 @@ namespace AhorcadoCliente.Pages
 
         private void showEarnedPoints()
         {
-            int playerPointsEarned = SessionManager.Instance.LoggedInPlayer.PointsEarned;
-            string pointsEarned = playerPointsEarned.ToString();
+            Player player = SessionManager.Instance.LoggedInPlayer;
+            int pointsEarned = userServicesClient.getPointsEarned(player.PlayerID);
             string label = Properties.Resources.LabelPointsEarned + " " + pointsEarned;
             labelPointsEarned.Content = label;
         }

@@ -1,20 +1,13 @@
 ﻿using AhorcadoCliente.GameServices;
 using AhorcadoCliente.WordServices;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Windows.Threading;
+using System.Windows;
+using System;
 
 namespace AhorcadoCliente.Pages
 {
@@ -33,6 +26,7 @@ namespace AhorcadoCliente.Pages
         int remainingAttempts;
         private int initialAttempts = 6;
         MatchGame matchGame;
+        private bool matchFinished = false;  // Variable de control para evitar mensajes duplicados
 
         public ChallengerView(MatchGame matchGame)
         {
@@ -44,15 +38,18 @@ namespace AhorcadoCliente.Pages
             dispatcherTimer.Interval = TimeSpan.FromSeconds(1);
             dispatcherTimer.Tick += DispatcherTimer_Tick;
             dispatcherTimer.Start();
-
         }
 
         private void DispatcherTimer_Tick(object sender, EventArgs e)
         {
-            checkMatchStatus();
-            getGuestLetter(matchGame);
-            updateImage();
-            
+            if (!matchFinished)  // Verificar si la partida ya ha terminado
+            {
+                //checkMatchStatus();
+                getGuestLetter(matchGame);
+                updateImage();
+                checkGuestLeave();
+                checkMatchFinish();
+            }
         }
 
         private void getGuestLetter(MatchGame matchID)
@@ -75,19 +72,28 @@ namespace AhorcadoCliente.Pages
         private void updateImage()
         {
             int newRemainingAttempts = gameServicesClient.getRemainingAttempts(matchGame.MatchID);
-            if (newRemainingAttempts != remainingAttempts) 
+            if (newRemainingAttempts != remainingAttempts)
             {
                 remainingAttempts = newRemainingAttempts;
-                int errorCounter = 6 - remainingAttempts; 
+                int errorCounter = 6 - remainingAttempts;
                 changeImage(errorCounter);
             }
             else if (remainingAttempts == 0)
             {
+                matchFinished = true;  // Indicar que la partida ha terminado
+                dispatcherTimer.Stop();
                 gameServicesClient.finishMatch(matchGame.MatchID);
                 string message = Properties.Resources.WinnerMatchMessageChallenger;
-                dispatcherTimer.Stop();
                 MessageBox.Show(message);
-                NavigationService.Navigate(new Lobby());
+                NavigationService navigationService = NavigationService.GetNavigationService(this);
+                if (navigationService != null)
+                {
+                    navigationService.Navigate(new Lobby());
+                }
+                else
+                {
+                    MessageBox.Show("NavigationService is not available.");
+                }
             }
         }
 
@@ -99,13 +105,13 @@ namespace AhorcadoCliente.Pages
 
         private void waitGuest(bool thereIsGuest)
         {
-            while (!thereIsGuest) 
-            { 
+            while (!thereIsGuest)
+            {
                 string message = Properties.Resources.WaitGuestMessage;
                 MessageBox.Show(message);
             }
-
         }
+
         private void updateWordLines(char Letter)
         {
             for (int i = 0; i < word.Length; i++)
@@ -213,10 +219,8 @@ namespace AhorcadoCliente.Pages
 
             if (result == MessageBoxResult.Yes)
             {
-
                 LeaveMatch();
             }
-
         }
 
         private void LeaveMatch()
@@ -236,7 +240,6 @@ namespace AhorcadoCliente.Pages
                     string message = Properties.Resources.MatchLeaveMessageError;
                     MessageBox.Show(message);
                 }
-
             }
             catch (Exception e)
             {
@@ -244,32 +247,39 @@ namespace AhorcadoCliente.Pages
             }
         }
 
-        private void checkMatchStatus()
+        private void checkMatchFinish()
+        {
+            if (matchFinished) return;  // Salir si la partida ya ha terminado
+
+            int matchStatus = gameServicesClient.getMatchStatus(matchGame.MatchID);
+            if (matchStatus == 3)
+            {
+                matchFinished = true;  // Indicar que la partida ha terminado
+                dispatcherTimer.Stop();
+                string messagge = Properties.Resources.LosserChallengerMessage;
+                MessageBox.Show(messagge);
+
+                NavigationService navigationService = NavigationService.GetNavigationService(this);
+                if (navigationService != null)
+                {
+                    navigationService.Navigate(new Lobby());
+                }
+                else
+                {
+                    MessageBox.Show("NavigationService is not available.");
+                }
+            }
+        }
+
+        private void checkGuestLeave()
         {
             int matchStatus = gameServicesClient.getMatchStatus(matchGame.MatchID);
             if (matchStatus == 2)
             {
-                string message = Properties.Resources.ChallengerLeaveMatchMessage;
+                dispatcherTimer.Stop();
+                string message = Properties.Resources.GuestLeaveMatchMessage;
                 MessageBox.Show(message);
-                dispatcherTimer.Stop();
                 NavigationService.Navigate(new Lobby());
-            }
-            
-            if (matchStatus == 3)
-            {
-                dispatcherTimer.Stop();
-
-                DispatcherTimer delayTimer = new DispatcherTimer();
-                delayTimer.Interval = TimeSpan.FromSeconds(1);
-                delayTimer.Tick += (sender, e) =>
-                {
-                    delayTimer.Stop();
-                    string messagge = Properties.Resources.LosserChallengerMessage;
-                    MessageBox.Show(messagge);
-                    NavigationService.Navigate(new Lobby());
-                };
-                delayTimer.Start();
-
             }
         }
     }

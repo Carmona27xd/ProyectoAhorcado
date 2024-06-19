@@ -349,7 +349,7 @@ namespace AhorcadoCliente.Properties {
         }
         
         /// <summary>
-        ///   Busca una cadena traducida similar a El invitado dejo el juego!.
+        ///   Busca una cadena traducida similar a El adivinador ha dejado el juego!.
         /// </summary>
         public static string GuestLeaveMatchMessage {
             get {

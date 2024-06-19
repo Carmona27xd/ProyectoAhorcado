@@ -71,6 +71,7 @@ namespace AhorcadoCliente.Pages
                     string message = Properties.Resources.MatchLeaveMessage;
                     MessageBox.Show(message);
                     NavigationService.Navigate(new Lobby());
+
                 }
                 else
                 {
