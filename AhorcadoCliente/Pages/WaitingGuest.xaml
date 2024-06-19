@@ -9,12 +9,32 @@
       d:DesignHeight="600" d:DesignWidth="800"
       Title="WaitingGuest">
 
-    <Grid Background="FloralWhite">
-        <Image HorizontalAlignment="Center" VerticalAlignment="Center" Height="160" Width="160"
-               Source="pack://application:,,,/Images/PlayerIcon.png"/>
+    <Grid Background="#4d9eed">
+        <Image HorizontalAlignment="Left" VerticalAlignment="Top" Height="574" Width="467"
+               Source="pack://application:,,,/Images/skull-wings.png" Margin="193,-75,0,0"/>
         <Label x:Name="lbWaitingPlayer" Content="{x:Static p:Resources.WaitGuestMessage}" HorizontalAlignment="Center" 
-               Margin="0,380,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold"/>
-        <Button x:Name="btnLeaveMatch" Content="{x:Static p:Resources.LeaveMatchButton}" Height="35" Width="130" Margin="0,500,0,0" 
-                VerticalAlignment="Top" HorizontalAlignment="Center" Click="LeaveMatch_Click"/>
+               Margin="0,380,0,0" VerticalAlignment="Top" FontSize="30" FontWeight="Bold" FontFamily="Monocraft"/>
+        <Button x:Name="btnLeaveMatch" Content="{x:Static p:Resources.LeaveMatchButton}" Height="45" Width="270" Margin="0,440,0,0" 
+        VerticalAlignment="Top" HorizontalAlignment="Center" Click="LeaveMatch_Click"
+        FontFamily="Monocraft" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Cursor="Hand"
+        Background="#28c4fc">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#1B2430"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="130" Height="45" CornerRadius="12" Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
+
     </Grid>
 </Page>

@@ -14,5 +14,17 @@ namespace AhorcadoServicios
     {
         [OperationContract]
         Player logIn(string email, string password);
+        [OperationContract]
+        bool registerUser(Player newPlayer);
+        [OperationContract]
+        bool emailAlreadyRegistered(string email);
+        [OperationContract]
+        bool nicknameAlreadyRegistered(string nickname);
+        [OperationContract]
+        bool telephoneAlreadyExist(string telephone);
+        [OperationContract]
+        bool updatePlayerProfile(Player updatePlayer);
+        [OperationContract]
+        int getPointsEarned(int playerID);
     }
 }

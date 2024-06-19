@@ -35,8 +35,8 @@ namespace AhorcadoCliente.Pages
 
         private void ponerCredenciales()
         {
-            txtEmail.Text = "c@gmail.com";
-            txtPassword.Password = "1";
+            txtEmail.Text = "ejemplo1@example.com";
+            txtPassword.Password = "contrasena1";
         }
 
         //BORRAR AL ENTREGAR
@@ -51,7 +51,7 @@ namespace AhorcadoCliente.Pages
             NavigationService.Navigate(new Uri("/Pages/UserRegister.xaml", UriKind.Relative));
         }
 
-        private void changeEnslish_Click(object sender, RoutedEventArgs e)
+        private void changeEnglish_Click(object sender, RoutedEventArgs e)
         {
             mainWindow.changeLanguage("en");
         }

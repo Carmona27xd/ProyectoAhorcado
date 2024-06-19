@@ -87,6 +87,12 @@
     <Compile Include="Pages\MatchHistory.xaml.cs">
       <DependentUpon>MatchHistory.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Pages\ModifyProfile.xaml.cs">
+      <DependentUpon>ModifyProfile.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\ViewProfile.xaml.cs">
+      <DependentUpon>ViewProfile.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\WaitingGuest.xaml.cs">
       <DependentUpon>WaitingGuest.xaml</DependentUpon>
     </Compile>
@@ -127,7 +133,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\ModifyProfile.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\UserRegister.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\ViewProfile.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -266,6 +280,10 @@
     <Resource Include="Images\skull-icon.png" />
     <Resource Include="Images\horizontal-skull.png" />
     <Resource Include="Images\vertical-skull.png" />
+    <Resource Include="Images\karthus.png" />
+    <Resource Include="Images\skull-hand.png" />
+    <Resource Include="Images\skull-motorcycle.png" />
+    <Resource Include="Images\skull-wings.png" />
     <Content Include="Music\Music.mp3">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

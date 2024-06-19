@@ -29,6 +29,7 @@ namespace AhorcadoCliente.Pages
         GameServicesClient gameServicesClient = new GameServicesClient();
         private int matchLanguage;
 
+
         public CreateMatch()
         {
             InitializeComponent();
@@ -41,20 +42,36 @@ namespace AhorcadoCliente.Pages
         {
             try
             {
-                MatchGame newMatch = createNewMatch();
-                MatchGame confirmation = await gameServicesClient.createMatchAsync(newMatch);
-                if (confirmation != null)
+                if (allSelectioned())
                 {
-                    string message = Properties.Resources.MatchCreatedMessage;
-                    MessageBox.Show(message); 
-                    NavigationService.Navigate(new WaitingGuest(confirmation));
+                    MatchGame newMatch = createNewMatch();
+                    MatchGame confirmation = await gameServicesClient.createMatchAsync(newMatch);
+                    if (confirmation != null)
+                    {
+                        string message = Properties.Resources.MatchCreatedMessage;
+                        MessageBox.Show(message);
+                        NavigationService.Navigate(new WaitingGuest(confirmation));
+                    }
+                } 
+                else
+                {
+                    string message = Properties.Resources.WarningCreateMatch;
+                    MessageBox.Show(message);
                 }
-
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private bool allSelectioned()
+        {
+            if (cbSelectWord.SelectedItem != null && cbWordCategories != null)
+            {
+                return true;
+            }
+            return false;
         }
 
         private void Cancel_Click(object sender, RoutedEventArgs e)

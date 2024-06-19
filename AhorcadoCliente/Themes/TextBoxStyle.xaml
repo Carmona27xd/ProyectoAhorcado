@@ -11,7 +11,7 @@
                             <TextBlock Margin="1" Text="{TemplateBinding Text}"
                                    VerticalAlignment="Center"
                                    Padding="5"
-                                   Foreground="#D6D5A8"
+                                   Foreground="Black"
                                    x:Name="SearchBox"
                          ></TextBlock>
                             <TextBlock IsHitTestVisible="False"
@@ -40,4 +40,4 @@
         </Setter>
     </Style>
 
-</ResourceDictionary>
+    </ResourceDictionary>

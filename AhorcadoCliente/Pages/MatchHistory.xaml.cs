@@ -24,10 +24,20 @@ namespace AhorcadoCliente.Pages
     {
         List<MatchGame> matchesPlayed;
         GameServicesClient gameServicesClient = new GameServicesClient();
+        UserServicesClient userServicesClient = new UserServicesClient();
         public MatchHistory()
         {
             InitializeComponent();
+            showEarnedPoints();
             getMatchesPlayed();
+        }
+
+        private void showEarnedPoints()
+        {
+            Player player = SessionManager.Instance.LoggedInPlayer;
+            int pointsEarned = userServicesClient.getPointsEarned(player.PlayerID);
+            string label = Properties.Resources.LabelPointsEarned + " " + pointsEarned;
+            labelPointsEarned.Content = label;
         }
 
         private void Back_Click(object sender, RoutedEventArgs e)

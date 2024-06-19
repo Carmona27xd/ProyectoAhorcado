@@ -9,42 +9,66 @@
       d:DesignHeight="600" d:DesignWidth="800"
       Title="ObserverPlayer">
 
-    <Grid Background="LightCyan" x:Name="Game">
+    <Grid Background="#4d9eed" x:Name="Game">
         <Grid.RowDefinitions>
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,10">
-            <Button Content="{x:Static p:Resources.LeaveMatchButton}" Height="35" Width="130" Margin="5" Click="LeaveMatch_Click"/>
-        </StackPanel>
-        <Image Name="imageControl" Source="pack://application:,,,/Images/0.jpg" HorizontalAlignment="Left" Height="200" Margin="450,50,0,0" VerticalAlignment="Top" Width="200"/>
-        <Button x:Name="IButton" Content="I" HorizontalAlignment="Left" Margin="530,369,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="WButton" Content="W" HorizontalAlignment="Left" Margin="140,369,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="EButton" Content="E" HorizontalAlignment="Left" Margin="205,369,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="QButton" Content="Q" HorizontalAlignment="Left" Margin="75,369,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="RButton" Content="R" HorizontalAlignment="Left" Margin="270,369,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="TButton" Content="T" HorizontalAlignment="Left" Margin="335,369,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="UButton" Content="U" HorizontalAlignment="Left" Margin="465,369,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="YButton" Content="Y" HorizontalAlignment="Left" Margin="400,369,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="OButton" Content="O" HorizontalAlignment="Left" Margin="595,369,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="PButton" Content="P" HorizontalAlignment="Left" Margin="660,369,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="KButton" Content="K" HorizontalAlignment="Left" Margin="530,409,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="SButton" Content="S" HorizontalAlignment="Left" Margin="140,409,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="DButton" Content="D" HorizontalAlignment="Left" Margin="205,409,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="AButton" Content="A" HorizontalAlignment="Left" Margin="75,409,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="FButton" Content="F" HorizontalAlignment="Left" Margin="270,409,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="GButton" Content="G" HorizontalAlignment="Left" Margin="335,409,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="JButton" Content="J" HorizontalAlignment="Left" Margin="465,409,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="HButton" Content="H" HorizontalAlignment="Left" Margin="400,409,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="LButton" Content="L" HorizontalAlignment="Left" Margin="595,409,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="ÑButton" Content="Ñ" HorizontalAlignment="Left" Margin="660,409,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="MButton" Content="M" HorizontalAlignment="Left" Margin="530,449,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="ZButton" Content="Z" HorizontalAlignment="Left" Margin="140,449,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="XButton" Content="X" HorizontalAlignment="Left" Margin="205,449,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="CButton" Content="C" HorizontalAlignment="Left" Margin="270,449,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="VButton" Content="V" HorizontalAlignment="Left" Margin="335,449,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="NButton" Content="N" HorizontalAlignment="Left" Margin="465,449,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
-        <Button x:Name="BButton" Content="B" HorizontalAlignment="Left" Margin="400,449,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click"/>
+
+        <!-- Botón de salir de la partida -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,10,10"/>
+
+        <!-- Imagen de Ahorcado -->
+        <Image Name="imageControl" Source="pack://application:,,,/Images/0.jpg" HorizontalAlignment="Left" Height="200" Margin="495,50,0,0" VerticalAlignment="Top" Width="200"/>
+
+        <!-- Botones de letras -->
+        <Button x:Name="IButton" Content="I" HorizontalAlignment="Left" Margin="530,369,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="WButton" Content="W" HorizontalAlignment="Left" Margin="140,369,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="EButton" Content="E" HorizontalAlignment="Left" Margin="205,369,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="QButton" Content="Q" HorizontalAlignment="Left" Margin="75,369,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="RButton" Content="R" HorizontalAlignment="Left" Margin="270,369,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="TButton" Content="T" HorizontalAlignment="Left" Margin="335,369,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="UButton" Content="U" HorizontalAlignment="Left" Margin="465,369,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="YButton" Content="Y" HorizontalAlignment="Left" Margin="400,369,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="OButton" Content="O" HorizontalAlignment="Left" Margin="595,369,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="PButton" Content="P" HorizontalAlignment="Left" Margin="660,369,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="KButton" Content="K" HorizontalAlignment="Left" Margin="530,409,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="SButton" Content="S" HorizontalAlignment="Left" Margin="140,409,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="DButton" Content="D" HorizontalAlignment="Left" Margin="205,409,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="AButton" Content="A" HorizontalAlignment="Left" Margin="75,409,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="FButton" Content="F" HorizontalAlignment="Left" Margin="270,409,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="GButton" Content="G" HorizontalAlignment="Left" Margin="335,409,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="JButton" Content="J" HorizontalAlignment="Left" Margin="465,409,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="HButton" Content="H" HorizontalAlignment="Left" Margin="400,409,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="LButton" Content="L" HorizontalAlignment="Left" Margin="595,409,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="ÑButton" Content="Ñ" HorizontalAlignment="Left" Margin="660,409,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="MButton" Content="M" HorizontalAlignment="Left" Margin="530,449,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="ZButton" Content="Z" HorizontalAlignment="Left" Margin="140,449,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="XButton" Content="X" HorizontalAlignment="Left" Margin="205,449,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="CButton" Content="C" HorizontalAlignment="Left" Margin="270,449,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="VButton" Content="V" HorizontalAlignment="Left" Margin="335,449,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="NButton" Content="N" HorizontalAlignment="Left" Margin="465,449,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button x:Name="BButton" Content="B" HorizontalAlignment="Left" Margin="400,449,0,0" VerticalAlignment="Top" Height="35" Width="60" FontSize="20" FontWeight="Bold" Click="LetterButton_Click" FontFamily="Monocraft" Foreground="#D6D5A8" Background="#28c4fc"/>
+        <Button Content="{x:Static p:Resources.LeaveMatchButton}" Height="35" Width="130" Click="LeaveMatch_Click"
+        FontFamily="Monocraft" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Cursor="Hand"
+        Background="#28c4fc" Margin="655,560,15,5" Grid.RowSpan="2">
+            <Button.Style>
+                <Style TargetType="{x:Type Button}">
+                    <Style.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="Background" Value="#1B2430"/>
+                        </Trigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Width="130" Height="35" CornerRadius="12" Background="{TemplateBinding Background}">
+                        <ContentPresenter VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Button.Template>
+        </Button>
         <WrapPanel x:Name="WordPanel" Margin="60,270,60,0" VerticalAlignment="Top" Height="auto" HorizontalAlignment="Center"/>
         <TextBlock x:Name="txtBockClue" HorizontalAlignment="Left" Margin="75,50,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="200" Width="355" FontSize="20"/>
     </Grid>

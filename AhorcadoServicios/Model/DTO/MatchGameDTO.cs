@@ -31,13 +31,15 @@ namespace AhorcadoServicios.Model.DTO
         {
             try
             {
-                var connection = ConnectionDB.getConnection();
-                connection.Open();
-                DataContext dataContext = new DataContext(connection);
-                var matches = (from mat in dataContext.GetTable<MatchGame>()
-                               where mat.StatusMatchID == 1 && mat.ChallengerID != playerID
-                               select mat).ToList();
-                return matches;
+                using (var connection = ConnectionDB.getConnection())
+                {
+                    connection.Open();
+                    DataContext dataContext = new DataContext(connection);
+                    var matches = (from mat in dataContext.GetTable<MatchGame>()
+                                   where mat.StatusMatchID == 1 && mat.ChallengerID != playerID
+                                   select mat).ToList();
+                    return matches;
+                }
             }
             catch (SqlException ex)
             {
