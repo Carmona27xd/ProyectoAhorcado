@@ -193,8 +193,16 @@ namespace AhorcadoCliente.Pages
                         {
                             try
                             {
-                                Player updatePlayer = SessionManager.Instance.LoggedInPlayer;
-                                bool confirmation = await userServices.updatePlayerProfileAsync(updatePlayer);
+                                player.Names = txtNames.Text.Trim();
+                                player.FirstSurname = txtFirstSurname.Text.Trim();
+                                player.SecondSurname = txtSecondSurname.Text.Trim();
+                                player.NickName = txtNickname.Text.Trim();
+                                player.Email = txtEmail.Text.Trim();
+                                player.PhoneNumber = txtTelephone.Text.Trim();
+                                player.Password = txtPassword.Password.Trim();
+                                player.BirthDate = dpBirthDate.SelectedDate.Value.ToString("yyyy-MM-dd");
+
+                                bool confirmation = await userServices.updatePlayerProfileAsync(player);
                                 if (confirmation)
                                 {
                                     string message = Properties.Resources.ConfirmationModify;
@@ -221,6 +229,7 @@ namespace AhorcadoCliente.Pages
                 }
             }
         }
+
 
         private bool allValidate()
         {

@@ -58,11 +58,14 @@ namespace AhorcadoServicios.Model.DTO
                     return false;
                 }
             }
-            catch (SqlException ex)
+            catch (Exception ex)
             {
-                throw ex;
+                Console.WriteLine($"Error al actualizar el perfil del jugador: {ex.Message}");
+                return false;
             }
         }
+
+
 
         public static bool registerUser(Player newPlayer)
         {
