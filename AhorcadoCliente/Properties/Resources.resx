@@ -297,6 +297,9 @@
   <data name="MatchHistoryLabel" xml:space="preserve">
     <value>Historial de partidas</value>
   </data>
+  <data name="MatchLanguage" xml:space="preserve">
+    <value>Idioma de la partida</value>
+  </data>
   <data name="MatchLeaveMessage" xml:space="preserve">
     <value>Has abandonado la partida</value>
   </data>

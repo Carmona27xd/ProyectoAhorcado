@@ -297,6 +297,9 @@
   <data name="MatchHistoryLabel" xml:space="preserve">
     <value>Match history</value>
   </data>
+  <data name="MatchLanguage" xml:space="preserve">
+    <value>Match language</value>
+  </data>
   <data name="MatchLeaveMessage" xml:space="preserve">
     <value>You have abandoned the game</value>
   </data>

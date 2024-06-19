@@ -601,6 +601,15 @@ namespace AhorcadoCliente.Properties {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Idioma de la partida.
+        /// </summary>
+        public static string MatchLanguage {
+            get {
+                return ResourceManager.GetString("MatchLanguage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Has abandonado la partida.
         /// </summary>
         public static string MatchLeaveMessage {
