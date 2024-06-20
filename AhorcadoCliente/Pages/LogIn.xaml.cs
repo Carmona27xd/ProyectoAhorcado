@@ -28,7 +28,7 @@ namespace AhorcadoCliente.Pages
         {
             InitializeComponent();
             this.mainWindow = mainWindow;
-            ponerCredenciales();
+            //ponerCredenciales();
         }
 
         //BORRAR AL ENTREGAR

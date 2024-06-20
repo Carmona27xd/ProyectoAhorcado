@@ -10,6 +10,42 @@ namespace AhorcadoServicios.Model.DTO
 {
     public class MatchGameDTO
     {
+        public static int updateGameWinner(int matchID, string nameWinner)
+        {
+            try
+            {
+                using (var connection = ConnectionDB.getConnection())
+                {
+                    connection.Open();
+                    DataContext dataContext = new DataContext(connection);
+
+                    // Buscar la partida por ID
+                    var match = dataContext.GetTable<MatchGame>().SingleOrDefault(m => m.MatchID == matchID);
+
+                    if (match != null)
+                    {
+                        // Actualizar el nombre del ganador
+                        match.WinnerNickname = nameWinner;
+
+                        // Guardar cambios en la base de datos
+                        dataContext.SubmitChanges();
+
+                        return 1; // Éxito
+                    }
+                    else
+                    {
+                        return 0; // No se encontró la partida
+                    }
+                }
+            }
+            catch (SqlException ex)
+            {
+                // Manejo de errores
+                Console.WriteLine(ex.Message);
+                return -1; // Indicador de error
+            }
+        }
+
         public static MatchGame createMatch(MatchGame newMatch)
         {
             try

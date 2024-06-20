@@ -14,6 +14,7 @@
       <xs:element minOccurs="0" name="SelectLetter" nillable="true" type="ser:char" />
       <xs:element minOccurs="0" name="StatusMatchID" type="xs:int" />
       <xs:element minOccurs="0" name="WinnerID" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="WinnerNickname" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="WordID" type="xs:int" />
     </xs:sequence>
   </xs:complexType>

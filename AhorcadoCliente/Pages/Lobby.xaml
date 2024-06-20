@@ -30,7 +30,6 @@
                 <DataGridTextColumn Header="{x:Static p:Resources.DataGridColumnNickName}" Binding="{Binding NickNameChallenger}" Width="*" />
                 <DataGridTextColumn Header="{x:Static p:Resources.DataGridColumnEmail}" Binding="{Binding EmailChallenger}" Width="*" />
                 <DataGridTextColumn Header="{x:Static p:Resources.DataGridColumnDate}" Binding="{Binding DateMatch}" Width="*" />
-                <DataGridTextColumn Header="{x:Static p:Resources.MatchLanguage}" Binding="{Binding DateMatch}" Width="*" />
                 <DataGridTemplateColumn Header="{x:Static p:Resources.DataGridColumnJoin}" Width="*">
                     <DataGridTemplateColumn.CellTemplate>
                         <DataTemplate>

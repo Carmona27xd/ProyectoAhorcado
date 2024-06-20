@@ -59,13 +59,13 @@
                 </Button.Template>
             </Button>
         </StackPanel>
-        <Label Content="{x:Static p:Resources.CategoriesCreateMatch}" HorizontalAlignment="Left" Margin="292,155,0,0" VerticalAlignment="Top" FontFamily="Monocraft" RenderTransformOrigin="-0.111,0.52"/>
+        <Label Content="{x:Static p:Resources.CategoriesCreateMatch}" HorizontalAlignment="Left" Margin="292,155,0,0" VerticalAlignment="Top" FontFamily="Monocraft" RenderTransformOrigin="-0.111,0.52" FontSize="15"/>
         <ComboBox x:Name="cbSelectWord" HorizontalAlignment="Left" Margin="575,185,0,0" VerticalAlignment="Top" Width="200"/>
-        <Label Content="{x:Static p:Resources.SelectWordCreateMatch}" HorizontalAlignment="Left" Margin="575,155,0,0" VerticalAlignment="Top"  FontFamily="Monocraft"/>
-        <Label Content="{x:Static p:Resources.GameLanguageLabel}" HorizontalAlignment="Left" Margin="270,81,0,0" VerticalAlignment="Top"  FontFamily="Monocraft" Width="290"/>
-        <Button Content="{x:Static p:Resources.EnglishButton}" HorizontalAlignment="Left" Margin="541,80,0,0" VerticalAlignment="Top" Width="90" Height="25" Click="EnglishSelection_Click"
+        <Label Content="{x:Static p:Resources.SelectWordCreateMatch}" HorizontalAlignment="Left" Margin="575,155,0,0" VerticalAlignment="Top"  FontFamily="Monocraft" FontSize="15"/>
+        <Label Content="{x:Static p:Resources.GameLanguageLabel}" HorizontalAlignment="Left" Margin="225,33,0,0" VerticalAlignment="Top"  FontFamily="Monocraft" Width="475" FontSize="20"/>
+        <Button Content="{x:Static p:Resources.EnglishButton}" HorizontalAlignment="Left" Margin="310,81,0,0" VerticalAlignment="Top" Width="90" Height="25" Click="EnglishSelection_Click"
         FontFamily="Monocraft" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Cursor="Hand"
-        Background="#28c4fc">
+        Background="#28c4fc" RenderTransformOrigin="-0.216,0.928">
             <Button.Style>
                 <Style TargetType="{x:Type Button}">
                     <Style.Triggers>
@@ -84,7 +84,7 @@
             </Button.Template>
         </Button>
 
-        <Button Content="{x:Static p:Resources.SpanishButton}" HorizontalAlignment="Left" Margin="650,78,0,0" VerticalAlignment="Top" Width="90" Height="25" Click="SpanishSelection_Click"
+        <Button Content="{x:Static p:Resources.SpanishButton}" HorizontalAlignment="Left" Margin="507,81,0,0" VerticalAlignment="Top" Width="90" Height="25" Click="SpanishSelection_Click"
         FontFamily="Monocraft" Foreground="#D6D5A8" FontSize="14" FontWeight="Medium" Cursor="Hand"
         Background="#28c4fc">
             <Button.Style>

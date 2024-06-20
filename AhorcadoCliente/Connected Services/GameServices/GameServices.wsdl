@@ -97,6 +97,12 @@
   <wsdl:message name="IGameServices_updatePointsEarned_OutputMessage">
     <wsdl:part name="parameters" element="tns:updatePointsEarnedResponse" />
   </wsdl:message>
+  <wsdl:message name="IGameServices_updateNameWinner_InputMessage">
+    <wsdl:part name="parameters" element="tns:updateNameWinner" />
+  </wsdl:message>
+  <wsdl:message name="IGameServices_updateNameWinner_OutputMessage">
+    <wsdl:part name="parameters" element="tns:updateNameWinnerResponse" />
+  </wsdl:message>
   <wsdl:portType name="IGameServices">
     <wsdl:operation name="createMatch">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/createMatch" message="tns:IGameServices_createMatch_InputMessage" />
@@ -157,6 +163,10 @@
     <wsdl:operation name="updatePointsEarned">
       <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/updatePointsEarned" message="tns:IGameServices_updatePointsEarned_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IGameServices/updatePointsEarnedResponse" message="tns:IGameServices_updatePointsEarned_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="updateNameWinner">
+      <wsdl:input wsaw:Action="http://tempuri.org/IGameServices/updateNameWinner" message="tns:IGameServices_updateNameWinner_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IGameServices/updateNameWinnerResponse" message="tns:IGameServices_updateNameWinner_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IGameServices" type="tns:IGameServices">
@@ -289,6 +299,15 @@
     </wsdl:operation>
     <wsdl:operation name="updatePointsEarned">
       <soap:operation soapAction="http://tempuri.org/IGameServices/updatePointsEarned" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="updateNameWinner">
+      <soap:operation soapAction="http://tempuri.org/IGameServices/updateNameWinner" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

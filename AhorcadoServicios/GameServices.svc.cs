@@ -87,5 +87,10 @@ namespace AhorcadoServicios
         {
             return MatchGameDTO.updateWinner(playerID, matchID);
         }
+
+        public int updateNameWinner(int matchID, string nameWinner)
+        {
+            return MatchGameDTO.updateGameWinner(matchID, nameWinner);
+        }
     }
 }

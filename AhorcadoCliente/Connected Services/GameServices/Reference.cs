@@ -56,6 +56,9 @@ namespace AhorcadoCliente.GameServices {
         private System.Nullable<int> WinnerIDField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string WinnerNicknameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int WordIDField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -212,6 +215,19 @@ namespace AhorcadoCliente.GameServices {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public string WinnerNickname {
+            get {
+                return this.WinnerNicknameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.WinnerNicknameField, value) != true)) {
+                    this.WinnerNicknameField = value;
+                    this.RaisePropertyChanged("WinnerNickname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int WordID {
             get {
                 return this.WordIDField;
@@ -327,6 +343,12 @@ namespace AhorcadoCliente.GameServices {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/updatePointsEarned", ReplyAction="http://tempuri.org/IGameServices/updatePointsEarnedResponse")]
         System.Threading.Tasks.Task updatePointsEarnedAsync(int playerID);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/updateNameWinner", ReplyAction="http://tempuri.org/IGameServices/updateNameWinnerResponse")]
+        int updateNameWinner(int matchID, string nameWinner);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IGameServices/updateNameWinner", ReplyAction="http://tempuri.org/IGameServices/updateNameWinnerResponse")]
+        System.Threading.Tasks.Task<int> updateNameWinnerAsync(int matchID, string nameWinner);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -474,6 +496,14 @@ namespace AhorcadoCliente.GameServices {
         
         public System.Threading.Tasks.Task updatePointsEarnedAsync(int playerID) {
             return base.Channel.updatePointsEarnedAsync(playerID);
+        }
+        
+        public int updateNameWinner(int matchID, string nameWinner) {
+            return base.Channel.updateNameWinner(matchID, nameWinner);
+        }
+        
+        public System.Threading.Tasks.Task<int> updateNameWinnerAsync(int matchID, string nameWinner) {
+            return base.Channel.updateNameWinnerAsync(matchID, nameWinner);
         }
     }
 }

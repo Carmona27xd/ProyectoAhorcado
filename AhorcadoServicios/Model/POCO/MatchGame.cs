@@ -35,5 +35,7 @@ namespace AhorcadoServicios.Model.POCO
         [Column]
         public int MatchLanguage { get; set; }
 
+        [Column]
+        public string WinnerNickname { get; set; }
     }
 }

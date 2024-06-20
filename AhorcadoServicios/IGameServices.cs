@@ -42,5 +42,7 @@ namespace AhorcadoServicios
         int getRemainingAttempts(int matchID);
         [OperationContract]
         void updatePointsEarned(int playerID);
+        [OperationContract]
+        int updateNameWinner(int matchID, string nameWinner);
     }
 }
